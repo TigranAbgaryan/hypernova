@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { PROJECTS } from '../data/projects'
 import { PRODUCTS } from '../data/products'
 import naxagcerTop from '../assets/naxagcertop.png'
+import arevik1 from '../assets/arevik_1.jpg'
+import arevik2 from '../assets/arevik_2.jpg'
+import arevik3 from '../assets/arevik_3.jpg'
 import canaparh from '../assets/canaparh-icon.svg'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
@@ -58,7 +61,19 @@ export default function ProjectsPage() {
           «Հիպերնովա» ՍՊԸ-ն մասնագիտացած է ճանապարհաշինարարական և ենթակառուցվածքային նախագծերի իրականացման ոլորտում։ Ընկերությունն իրականացնում է միջպետական, հանրապետական և համայնքային նշանակության ավտոճանապարհների կառուցման, հիմնանորոգման և վերականգնման աշխատանքներ՝ ապահովելով բարձր որակ և համապատասխանություն ոլորտային չափանիշներին։
           </p>
 
-
+          <div className="img-grid-3col">
+            {PROJECTS.slice(0, 3).map((p, i) => (
+              <Link key={p.slug} to={`/naxagdzer/${p.slug}`} className="img-card img-card--tall">
+                <img src={[arevik1, arevik2, arevik3][i]} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
+                </div>
+              </Link>
+            ))}
+          </div>
+        
         </div>
       </section>
       {/* ── Services ── */}
@@ -71,17 +86,16 @@ export default function ProjectsPage() {
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="#" className="service-link">Իմանալ ավելին  </a>
               </div>
             ))}
           </div>
           <div className="services-footer">
-            <button className="btn-services-all">
+            <Link to="/carayutyunner" className="btn-services-all">
               Բոլոր ծառայությունները
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -91,7 +105,15 @@ export default function ProjectsPage() {
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">
-            {PRODUCTS.map(p => (
+            {PRODUCTS.map(p => p.noLink ? (
+              <div key={p.slug} className="img-card">
+                <img src={p.img} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                </div>
+              </div>
+            ) : (
               <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
@@ -103,12 +125,12 @@ export default function ProjectsPage() {
             ))}
           </div>
           <div className="section-footer">
-            <button className="btn-more">
-              Ամբողջական ցանկը
+            <Link to="/artadranq" className="btn-more">
+              Ամբոլջական ցանկը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,8 +1,8 @@
 export const PROJECTS = [
   {
-    slug: 'artshi-sanahin',
-    title: 'Արtshy – Sanahin բansaparghatsavatsds hndumannerum',
-    shortTitle: 'Artshi – Sanahin',
+    slug: 'Արևիկ – Տանձուտ',
+    title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում',
+    shortTitle: 'Արևիկ – Տանձուտ',
     img: 'https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=1600&q=80',
     year: '2024',
@@ -15,7 +15,7 @@ export const PROJECTS = [
   },
   {
     slug: 'yerevan-artashat',
-    title: 'Yerevan – Artashat bnakavayr sharjnakuner',
+    title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ',
     shortTitle: 'Yerevan – Artashat',
     img: 'https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?w=1600&q=80',
@@ -29,7 +29,7 @@ export const PROJECTS = [
   },
   {
     slug: 'm2-gyumri',
-    title: 'М-2 Ереван – Гюмри – Мhrdji – LL нanaparhi verakaghnumy',
+    title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ',
     shortTitle: 'М-2 Yerevan – Gyumri',
     img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80',

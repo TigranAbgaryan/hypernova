@@ -26,7 +26,7 @@ export default function Footer() {
           </ul>
           <ul>
             <li><a href="#">Գործընկերներ</a></li>
-            <li><a href="#">Փաստաթղթեր</a></li>
+            <li><Link to="/pastatxter">Փաստաթղթեր</Link></li>
             <li><a href="#">Մեր մասին</a></li>
           </ul>
         </div>

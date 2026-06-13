@@ -1,10 +1,7 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { PRODUCTS } from '../data/products'
 import canaparh from '../assets/canaparh-icon.svg'
-import asfaltbeton from '../assets/asfaltbeton.jpg'
-import beton from '../assets/beton.jpg'
-import erkatbeton from '../assets/erkatbeton.jpg'
-import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
-import vibrobeton from '../assets/vibrobeton.jpg'
-import bitum from '../assets/bitum.jpg'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
@@ -15,6 +12,14 @@ import mermasinFirst from '../assets/mermasin_first.png'
 import mermasinSecond from '../assets/mermasin_second.png'
 import mermasinThree from '../assets/mermasin_three.png'
 import logo from '../assets/footer-logo.svg'
+import slide1 from '../assets/home.png'
+import slide2 from '../assets/slide_2.png'
+import slide3 from '../assets/slide_3.png'
+import slide4 from '../assets/slide_4.png'
+import slide5 from '../assets/slide_5.png'
+import slide6 from '../assets/slide_6.png'
+
+const SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6]
 
 const SERVICES = [
   {
@@ -32,15 +37,6 @@ const SERVICES = [
     desc: 'Առաջարկում ենք շինարարական և ճանապարհաշինական տեխնիկայի վարձակալության տարբեր ծավալի և բարդության աշխատանքների համար։',
     icon: <img src={texnikayi} width="32" height="32" alt="" />,
   },
-]
-
-const PRODUCTS = [
-  { title: 'Ասֆալտբետոն', img: asfaltbeton },
-  { title: 'Բետոն', img: beton },
-  { title: 'Երկաթբետոնե կոնստրուկցիաներ', img: erkatbeton },
-  { title: 'Բիտումային էմուլսիա', img: bitumayinEmulsia },
-  { title: 'Վիբրոսեղմամբ բետոնե պատրաստվածքներ', img: vibrobeton },
-  { title: 'Բիտում', img: bitum },
 ]
 
 const PROJECTS = [
@@ -66,13 +62,43 @@ function CheckIcon() {
 }
 
 export default function HomePage() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(c => (c + 1) % SLIDES.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── Hero Slider ── */}
       <section className="hero">
+        {/* Slides */}
+        {SLIDES.map((src, i) => (
+          <div
+            key={i}
+            className={`hero-slide${i === current ? ' hero-slide--active' : ''}`}
+          >
+            <img src={src} alt="" aria-hidden="true" className="hero-slide-img" />
+          </div>
+        ))}
         <div className="hero-overlay" />
+
+        {/* Dots */}
+        <div className="hero-dots">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              className={`hero-dot${i === current ? ' hero-dot--active' : ''}`}
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+
         <div className="hero-content">
-            {/* <Image src={logo} alt="Hero Image"  /> */}
             <img src={logo} alt="Hypernova" style={{ height: '120px', width: 'auto' }} />
           <h2 className="hero-title" style={{ paddingBottom: 0 }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
             <h2 className="hero-title">արդի տեխնոլոգիաններ</h2>
@@ -84,7 +110,6 @@ export default function HomePage() {
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            {/* <button className="btn-outline">Դիտել աշխատանքները</button> */}
           </div>
         </div>
       </section>
@@ -114,17 +139,16 @@ export default function HomePage() {
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="#" className="service-link">Իմանալ ավելին  </a>
               </div>
             ))}
           </div>
           <div className="services-footer">
-            <button className="btn-services-all">
+            <Link to="/carayutyunner" className="btn-services-all">
               Բոլոր ծառայությունները
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -134,24 +158,32 @@ export default function HomePage() {
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">
-            {PRODUCTS.map(p => (
-              <a key={p.title} href="#" className="img-card">
+            {PRODUCTS.map(p => p.noLink ? (
+              <div key={p.slug} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
-              </a>
+              </div>
+            ) : (
+              <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
+                <img src={p.img} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                  <span className="img-card-link">դիտել մանրամասները</span>
+                </div>
+              </Link>
             ))}
           </div>
           <div className="section-footer">
-            <button className="btn-more">
-              Ամբողջական ցանկը
+            <Link to="/artadranq" className="btn-more">
+              Ամբոլջական ցանկը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -161,24 +193,24 @@ export default function HomePage() {
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">
-            {PROJECTS.map(p => (
+            {PROJECTS.map((p, i) => (
               <a key={p.title} href="#" className="img-card img-card--tall">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  <span className="img-card-link">Դիտել մանրամասները</span>
+                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
                 </div>
               </a>
             ))}
           </div>
           <div className="section-footer">
-            <button className="btn-more">
+            <Link to="/naxagdzer" className="btn-more">
               Դիտել բոլոր նախագծերը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

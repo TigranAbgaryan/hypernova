@@ -154,24 +154,32 @@ export default function AboutPage() {
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">
-            {PRODUCTS.map(p => (
-              <a key={p.title} href="#" className="img-card">
+            {PRODUCTS.map(p => p.noLink ? (
+              <div key={p.slug} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
-              </a>
+              </div>
+            ) : (
+              <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
+                <img src={p.img} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                  <span className="img-card-link">դիտել մանրամասները</span>
+                </div>
+              </Link>
             ))}
           </div>
           <div className="section-footer">
-            <button className="btn-more">
-              Ամբողջական ցանկը
+            <Link to="/artadranq" className="btn-more">
+              Ամբոլջական ցանկը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -187,17 +195,16 @@ export default function AboutPage() {
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="#" className="service-link">Իմանալ ավելին  </a>
               </div>
             ))}
           </div>
           <div className="services-footer">
-            <button className="btn-services-all">
+            <Link to="/carayutyunner" className="btn-services-all">
               Բոլոր ծառայությունները
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

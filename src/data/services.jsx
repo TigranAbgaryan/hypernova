@@ -1,8 +1,8 @@
 export const SERVICES = [
   {
-    slug: 'chananaparhi-karaghutyan',
-    title: 'Ճanaparhi karaghutyan',
-    shortTitle: 'Ծannayarzhnutyun',
+    slug: 'Ճանապարհաշինություն',
+    title: 'Ճանապարհաշինություն',
+    shortTitle: 'Ճանապարհաշինություն',
     img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
     category: 'Ճanaparhayin ashxatanq',

@@ -73,7 +73,15 @@ export default function ProductsPage() {
 
 
           <div className="prod-page-grid">
-            {PRODUCTS.map(p => (
+            {PRODUCTS.map(p => p.noLink ? (
+              <div key={p.slug} className="img-card">
+                <img src={p.img} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                </div>
+              </div>
+            ) : (
               <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
@@ -97,17 +105,16 @@ export default function ProductsPage() {
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="#" className="service-link">Դիտել մանրամասները</a>
               </div>
             ))}
           </div>
           <div className="services-footer">
-            <button className="btn-services-all">
+            <Link to="/carayutyunner" className="btn-services-all">
               Բոլոր ծառայությունները
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -117,24 +124,24 @@ export default function ProductsPage() {
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">
-            {PROJECTS.map(p => (
+            {PROJECTS.map((p, i) => (
               <a key={p.title} href="#" className="img-card img-card--tall" >
                 <img src={p.img} alt={p.title} loading="lazy"  />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  <span className="img-card-link">Դիտել մանրամասները</span>
+                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
                 </div>
               </a>
             ))}
           </div>
           <div className="section-footer">
-            <button className="btn-more">
+            <Link to="/naxagdzer" className="btn-more">
            Դիտել բոլոր նախագծերը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

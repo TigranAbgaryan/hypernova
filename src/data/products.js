@@ -11,29 +11,24 @@ import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
 import vibrobeton from '../assets/vibrobeton.jpg'
 import bitum from '../assets/bitum.jpg'
 
+
 export const PRODUCTS = [
   {
     slug: 'asfalt',
-    title: 'Ասֆալտ',
+    title: 'Ասֆալտբետոն',
     img: asfaltbeton,
-    heroImg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
-    category: 'Ճananaparhayin nյuter',
-    desc: 'Hypernova LLC-ն artadrum e bard oraki asfalt, vory hamapataskhanum e shaynagaghtsutyan barjraguyн pathanelnerun: Mer asfalty kiriararkvum e artenakarg shinarararakan nyuterov, vory apahov en erkarkaseli ev amur:',
-    desc2: 'Artadranky iravats e meծ u фoch шinarararakan nerdrumnerum, inchpesev nayev artakaghdzi parteznerum: Mer artadranky angnum e hamakarg verapahanogy ev kachyakin patanelnerun:',
-    specs: [
-      { label: 'Kshiry', value: 'M-20 ev M-30 marky asfalt betonner' },
-      { label: 'Patrastutyun', value: '30 + 20 + 10 sd' },
-      { label: 'Nerkayatsner', value: '40 + 25 + 15 sd' },
-      { label: 'Artadranaky', value: '40 + 15 + 25 sd' },
-    ],
+    heroImg: asfaltbeton,
+    category: 'Ճանապարհաշինություն',
+    desc: 'Սերտիֆիկացված ասֆալտբետոնի արտադրություն բոլոր տիպերի։',
+   
   },
   {
     slug: 'betone-favaryit',
-    title: 'Բetonne favaryit',
+    title: 'Բետոն',
     img: beton,
     heroImg: artadranqFirst,
     category: 'Բetone artadranq',
-    desc: 'Vibratsianayin betone yaporastavsvatsvagner — shnararar nakhagdzeri anghtanaguy tvyalner: Nrank artadrvum en barts kokord betoney, вory apahov e kachyak u erkarkaseli shinarararakan normayvorerum:',
+    desc: 'Սերտիֆիկացված բետոնի արտադրություն բոլոր տիպերի',
     desc2: 'Mer betone favority hasaneli e ev barzr kacharutyan: Handipum e hamakargi bolor patahanjnerin ev kiriararkvum e mshakuytabanak shal u glaner:',
     specs: [
       { label: 'Markaver', value: 'B25, B30, B35' },
@@ -44,24 +39,31 @@ export const PRODUCTS = [
   },
   {
     slug: 'betone-baryer',
-    title: 'Artadranakan baryer',
+    title: 'Երկաթբետոնե կոնստրուկցիաներ',
     img: erkatbeton,
     heroImg: artadranqFirst,
-    category: 'Անvtanagaynutyun',
-    desc: 'Vibratsianayin betone yaporastavsvatsvagner ogtagortsvoum en chananaparherum, khamrjakayannerum ev artenakarg hartsin avartelov: Artadranaky barzr amrapnut ev ankaskar e khelokhnerum:',
-    desc2: 'Aveli mets kayyutyan betone baryernery hasaneliutyan ev kachutyany mi anjam ev kargy: Mer artadranky hamapataskhanum e europayin standartnerun ev ogtakarvum e mец nakhagdzerum:',
-    specs: [
-      { label: 'Bardrutyun', value: '1 m' },
-      { label: 'Czaynutyun', value: '30 sd' },
-      { label: 'Kshiry', value: 'B25, B30' },
-      { label: 'Kashore', value: '600 kg / m' },
+    category: 'Անվտանգությունի համակարգեր',
+    desc: 'Սերտիֆիկացված երկաթբետոնե կոնստրուկցիաների արտադրություն և վաճառք, մասնավորապես.',
+    items: [
+      'Երկայնական բետոնե վաք Б-2-20',
+      'Б-8 բետոնե բլոկ',
+      'Երկայնական բետոնե վաք Б-1-20',
+      'Ե/բ վաք 30×34 սմ',
+      'Ե/բ վաք 50×60 սմ',
+      'Բետոնե 17×34 սմ վաք',
+      'Հենարանների իրանների հավաքովի N5 բլոկների բետոն — չափ. 285×165×100 սմ, V=3.01մ³, P=7.2տ',
+      'Ե/բ հավաքովի գլխադիրների N8 բլոկներ — չափ. 302×75×60 սմ, V=1.09մ³, P=2.7տ',
+      'N25 ծածկի սալերի հավաքովի ե/բ — չափ. 38×100×460 սմ, V=1.54մ³, P=3.9տ; AI=35.39 կգ/մ³, AII=144.87 կգ/մ³',
+      'Ե/բ դիտահորեր D=1000մմ, D=1500մմ, D=2000մմ',
+      'Ե/բ դիտահորի ծածկի սալ թուջե մտոցով և շրջանակով, թուջե անձրևընդունիչ ցանցով D=1000մմ, D=1500մմ, D=2000մմ, 1200×1200, 1700×1700, 2200×2200',
     ],
   },
   {
-    slug: 'hankayiny-lick',
-    title: 'Hankayan lyck',
+    slug: 'bitumayin-emulsia',
+    title: 'Բիտումային էմուլսիա',
     img: bitumayinEmulsia,
     heroImg: artadranqFirst,
+    noLink: true,
     category: 'Litsker ev nюter',
     desc: 'Hankayan licky barzr oraki litsq e shinarararutyunum: Kiriararkvum e vkayakan ahberum u norin hamakargum ev angnum e sharzhman petqnery nvazeluny:',
     desc2: 'Mer hankayan licky hertsk artadrvogh e ev inq hasanelyali: Artadranky pataskhanum e bolor texnikakan normayvorerum:',
@@ -74,11 +76,11 @@ export const PRODUCTS = [
   },
   {
     slug: 'vidroizolaciya',
-    title: 'Vidroizolaciya sharanayin',
+    title: 'Վիբրոսեղմամբ բետոնե պատրաստվածքներ',
     img: vibrobeton,
     heroImg: artadranqFirst,
     category: 'Izolacion nюter',
-    desc: 'Shinarararakan bnak vidroizolacion nуteren en patrasdum sharanayin izolyaciay ev shaynagaghtsum: Artadranky ogtakarvum e bnak shinarararakan нakhagdzerum:',
+    desc: 'Սերտիֆիկացված վիբրոսեղմամբ բետոնե պատրաստվածքների արտադրություն և վաճառք, մասնավորապես.',
     desc2: 'Mer vidroizolaciyay barzr oraky e ev angnum e uzhey mekcnel: Pataskhanum e erkararaseli normayvorerum ev kiriararkvum e mshakuytabanak materialov:',
     specs: [
       { label: 'Nerk', value: '3 mm, 4 mm' },
@@ -88,12 +90,12 @@ export const PRODUCTS = [
     ],
   },
   {
-    slug: 'betone-plitaner',
-    title: 'Բetonne plitaner',
+    slug: 'bitum',
+    title: 'Բիտում',
     img: bitum,
     heroImg: artadranqFirst,
     category: 'Բetone artadranq',
-    desc: 'Betone plitanery kiriararkvum en kerorner, arhatakner ev artakaghdzi kentronum: Mer plitanery barzr amrapnut u kachyakan en, hamapataskhanum en europayin standartnerun:',
+    desc: 'Սերտիֆիկացված բիտումի ուղղակի ներմուծում և վաճառք',
     desc2: 'Artadranky artadrvum e vibropressavorman eghanakov, vory apahov e barzr shtapatrutyun: Hasaneliutyan u barevarman tesnaketerutyan mi pert sharq:',
     specs: [
       { label: 'Kshiry', value: 'B30, B35' },
