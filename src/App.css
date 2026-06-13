@@ -53,8 +53,7 @@ body {
 
 .logo img,
 .logo-img {
-  width: 144px;
-  max-width: 100%;
+  width: clamp(90px, 28vw, 144px);
   height: auto;
   object-fit: contain;
   display: block;
@@ -247,6 +246,13 @@ body {
 
 .hero-arrow--prev { left: 24px; }
 .hero-arrow--next { right: 24px; }
+
+.hero-logo {
+  height: clamp(60px, 15vw, 120px);
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 /* Dots */
 .hero-dots {
@@ -1992,8 +1998,6 @@ body {
   .breadcrumb-inner { font-size: 12px; }
 
   /* Logo */
-  .logo img,
-  .logo-img { width: 100px; }
 
   /* Product/Service detail */
   .pd-hero-inner { grid-template-columns: 1fr; }

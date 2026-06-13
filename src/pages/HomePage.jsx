@@ -99,7 +99,7 @@ export default function HomePage() {
         </div>
 
         <div className="hero-content">
-            <img src={logo} alt="Hypernova" style={{ height: '120px', width: 'auto' }} />
+            <img src={logo} alt="Hypernova" className="hero-logo" />
           <h2 className="hero-title" style={{ paddingBottom: 0 }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
             <h2 className="hero-title">արդի տեխնոլոգիաններ</h2>
 

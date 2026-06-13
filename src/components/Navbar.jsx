@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="container navbar-inner">
 
         <Link to="/" className="logo">
-          <img src={logo} alt="Hypernova LLC" className="logo-img" style={{ objectFit: 'contain' }} />
+          <img src={logo} alt="Hypernova LLC" className="logo-img" />
         </Link>
 
         <nav className={`nav-menu${isOpen ? ' nav-menu--open' : ''}`}>
