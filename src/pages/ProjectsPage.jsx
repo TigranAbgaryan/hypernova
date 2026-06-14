@@ -62,13 +62,13 @@ export default function ProjectsPage() {
           </p>
 
           <div className="img-grid-3col">
-            {PROJECTS.slice(0, 3).map((p, i) => (
-              <Link key={p.slug} to={`/naxagdzer/${p.slug}`} className="img-card img-card--tall">
-                <img src={[arevik1, arevik2, arevik3][i]} alt={p.title} loading="lazy" />
+            {PROJECTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to={`/naxagdzer/${encodeURIComponent(p.slug)}`} className="img-card img-card--tall">
+                <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
+                  <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
               </Link>
             ))}

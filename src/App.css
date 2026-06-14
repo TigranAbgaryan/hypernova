@@ -220,19 +220,19 @@ body {
   width: 100%;
 }
 
-/* Prev / Next arrows */
+/* Prev / Next arrows (mobile only) */
 .hero-arrow {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 4;
+  z-index: 5;
   background: rgba(0, 0, 0, 0.35);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1983,9 +1983,10 @@ body {
   .page-hero { height: 180px; }
   .page-hero--tall { height: 220px; }
   .proj-hero-banner { height: 200px; }
-  .hero-arrow { width: 36px; height: 36px; }
+  .hero-arrow { display: flex; width: 36px; height: 36px; }
   .hero-arrow--prev { left: 12px; }
   .hero-arrow--next { right: 12px; }
+  .hero-dots { display: none; }
 
   /* About page stats */
   .about-page-stats { flex-direction: column; gap: 16px; align-items: center; }

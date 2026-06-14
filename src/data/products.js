@@ -5,7 +5,14 @@ import artadranqFour from '../assets/artadranq_four.png'
 import artadranqFive from '../assets/artadranq_five.png'
 import artadranqSix from '../assets/artadranq_six.png'
 import asfaltbeton from '../assets/asfaltbeton.jpg'
+import asfalt1 from '../assets/asfalt/asfalt_first.jpg'
+import asfalt2 from '../assets/asfalt/asfalt_second.jpg'
+import asfalt3 from '../assets/asfalt/asfalt_three.jpg'
 import beton from '../assets/beton.jpg'
+import beton1 from '../assets/beton/Բետոն 1.jpeg'
+import beton2 from '../assets/beton/Բետոն 2.jpeg'
+import beton3 from '../assets/beton/Բետոն 3.jpeg'
+import beton4 from '../assets/beton/Բետոն 4.jpg'
 import erkatbeton from '../assets/erkatbeton.jpg'
 import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
 import vibrobeton from '../assets/vibrobeton.jpg'
@@ -17,7 +24,8 @@ export const PRODUCTS = [
     slug: 'asfalt',
     title: 'Ասֆալտբետոն',
     img: asfaltbeton,
-    heroImg: asfaltbeton,
+    heroImg: asfalt1,
+    slides: [asfalt1, asfalt2, asfalt3],
     category: 'Ճանապարհաշինություն',
     desc: 'Սերտիֆիկացված ասֆալտբետոնի արտադրություն բոլոր տիպերի։',
    
@@ -26,7 +34,8 @@ export const PRODUCTS = [
     slug: 'betone-favaryit',
     title: 'Բետոն',
     img: beton,
-    heroImg: artadranqFirst,
+    heroImg: beton1,
+    slides: [beton1, beton2, beton3, beton4],
     category: 'Բetone artadranq',
     desc: 'Սերտիֆիկացված բետոնի արտադրություն բոլոր տիպերի',
     desc2: 'Mer betone favority hasaneli e ev barzr kacharutyan: Handipum e hamakargi bolor patahanjnerin ev kiriararkvum e mshakuytabanak shal u glaner:',
@@ -65,7 +74,7 @@ export const PRODUCTS = [
     heroImg: artadranqFirst,
     noLink: true,
     category: 'Litsker ev nюter',
-    desc: 'Hankayan licky barzr oraki litsq e shinarararutyunum: Kiriararkvum e vkayakan ahberum u norin hamakargum ev angnum e sharzhman petqnery nvazeluny:',
+    desc: 'Բիտումային էմուլսիայի արտադրություն և վաճառք',
     desc2: 'Mer hankayan licky hertsk artadrvogh e ev inq hasanelyali: Artadranky pataskhanum e bolor texnikakan normayvorerum:',
     specs: [
       { label: 'Kshiry', value: 'Dolomit, Bazalt, Granit' },

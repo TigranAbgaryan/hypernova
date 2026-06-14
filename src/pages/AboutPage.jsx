@@ -1,12 +1,5 @@
 import { Link } from 'react-router-dom'
-
-
-import asfaltbeton from '../assets/asfaltbeton.jpg'
-import beton from '../assets/beton.jpg'
-import erkatbeton from '../assets/erkatbeton.jpg'
-import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
-import vibrobeton from '../assets/vibrobeton.jpg'
-import bitum from '../assets/bitum.jpg'
+import { PRODUCTS } from '../data/products'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
@@ -43,31 +36,6 @@ const STATS = [
   { num: '200 +', label: 'Avartvatsd naxagdzerry' },
   { num: '50 +', label: 'Ashxatakitsner' },
   { num: '12 +', label: 'Taryi gordzuneutyun' },
-]
-const PRODUCTS = [
-  { title: 'Ասֆալտբետոն', img: asfaltbeton },
-  { title: 'Բետոն', img: beton },
-  { title: 'Երկաթբետոնե կոնստրուկցիաներ', img: erkatbeton },
-  { title: 'Բիտումային էմուլսիա', img: bitumayinEmulsia },
-  { title: 'Վիբրոսեղմամբ բետոնե պատրաստվածքներ', img: vibrobeton },
-  { title: 'Բիտում', img: bitum },
-]
-const TEAM = [
-  {
-    name: 'Aram Petrosyan',
-    role: 'Geneteral Dyrektor',
-    img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-  },
-  {
-    name: 'Lilit Sargsyan',
-    role: 'Texnikakan Dyrektor',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-  },
-  {
-    name: 'Davit Hakobyan',
-    role: 'Nakhagitsneri Ղekarvar',
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-  },
 ]
 
 export default function AboutPage() {

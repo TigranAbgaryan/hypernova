@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PRODUCTS } from '../data/products'
+import { PROJECTS } from '../data/projects'
 import artadranqHome from '../assets/artadranq_home.png'
 import canaparh from '../assets/canaparh-icon.svg'
 import asfaltbeton from '../assets/asfaltbeton.jpg'
@@ -11,9 +12,6 @@ import bitum from '../assets/bitum.jpg'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
-import naxagicFirst from '../assets/naxagic_first.jpg'
-import naxagicSecond from '../assets/naxagic_second.jpg'
-import naxagicThree from '../assets/naxagic_three.jpg'
 
 const SERVICES = [
   {
@@ -32,13 +30,6 @@ const SERVICES = [
     icon: <img src={texnikayi} width="32" height="32" alt="" />,
   },
 ]
-const PROJECTS = [
-  { title: 'Մ15 Վերին Պտղնի – Մասիս ճանապարհահատվածի հիմնանորոգում', img: naxagicFirst },
-  { title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ', img: naxagicSecond },
-  { title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում', img: naxagicThree },
-]
-
-
 export default function ProductsPage() {
   return (
     <>
@@ -73,15 +64,7 @@ export default function ProductsPage() {
 
 
           <div className="prod-page-grid">
-            {PRODUCTS.map(p => p.noLink ? (
-              <div key={p.slug} className="img-card">
-                <img src={p.img} alt={p.title} loading="lazy" />
-                <div className="img-card-overlay" />
-                <div className="img-card-content">
-                  <span className="img-card-title">{p.title}</span>
-                </div>
-              </div>
-            ) : (
+            {PRODUCTS.map(p => (
               <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
@@ -124,15 +107,15 @@ export default function ProductsPage() {
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">
-            {PROJECTS.map((p, i) => (
-              <a key={p.title} href="#" className="img-card img-card--tall" >
-                <img src={p.img} alt={p.title} loading="lazy"  />
+            {PROJECTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to={`/naxagdzer/${encodeURIComponent(p.slug)}`} className="img-card img-card--tall">
+                <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
+                  <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="section-footer">

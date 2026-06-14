@@ -82,13 +82,13 @@ export default function ServicesPage() {
           </p>
 
           <div className="img-grid-2x2">
-            {SERVICES.map(s => (
+            {SERVICES.map((s, i) => (
               <Link key={s.slug} to={`/carayutyunner/${s.slug}`} className="img-card">
                 <img src={s.img} alt={s.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{s.title}</span>
-                  <span className="img-card-link">դիտել մանրամասները</span>
+                  {i === 0 && <span className="img-card-link">դիտել մանրամասները</span>}
                 </div>
               </Link>
             ))}

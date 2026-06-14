@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { PRODUCTS } from '../data/products'
+import { PROJECTS } from '../data/projects'
 import canaparh from '../assets/canaparh-icon.svg'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
-import naxagicFirst from '../assets/naxagic_first.jpg'
-import naxagicSecond from '../assets/naxagic_second.jpg'
-import naxagicThree from '../assets/naxagic_three.jpg'
 import mermasinFirst from '../assets/mermasin_first.png'
 import mermasinSecond from '../assets/mermasin_second.png'
 import mermasinThree from '../assets/mermasin_three.png'
@@ -39,11 +37,6 @@ const SERVICES = [
   },
 ]
 
-const PROJECTS = [
-  { title: 'Մ15 Վերին Պտղնի – Մասիս ճանապարհահատվածի հիմնանորոգում', img: naxagicFirst },
-  { title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ', img: naxagicSecond },
-  { title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում', img: naxagicThree },
-]
 
 const FEATURES = [
   'Մասնագիտական մոտեցում',
@@ -86,7 +79,7 @@ export default function HomePage() {
         ))}
         <div className="hero-overlay" />
 
-        {/* Dots */}
+        {/* Dots (desktop only) */}
         <div className="hero-dots">
           {SLIDES.map((_, i) => (
             <button
@@ -112,6 +105,26 @@ export default function HomePage() {
             </button>
           </div>
         </div>
+
+        {/* Prev / Next arrows (mobile only) */}
+        <button
+          className="hero-arrow hero-arrow--prev"
+          onClick={() => setCurrent(c => (c - 1 + SLIDES.length) % SLIDES.length)}
+          aria-label="Previous slide"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20">
+            <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button
+          className="hero-arrow hero-arrow--next"
+          onClick={() => setCurrent(c => (c + 1) % SLIDES.length)}
+          aria-label="Next slide"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="20" height="20">
+            <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </section>
 
       {/* ── Why Choose Us ── */}
@@ -193,15 +206,15 @@ export default function HomePage() {
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">
-            {PROJECTS.map((p, i) => (
-              <a key={p.title} href="#" className="img-card img-card--tall">
+            {PROJECTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to={`/naxagdzer/${encodeURIComponent(p.slug)}`} className="img-card img-card--tall">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
-                  {i === 0 && <span className="img-card-link">Դիտել մանրամասները</span>}
+                  <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="section-footer">

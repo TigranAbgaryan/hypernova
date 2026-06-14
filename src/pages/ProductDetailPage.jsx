@@ -1,11 +1,10 @@
+import { useState, useEffect } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { PRODUCTS } from '../data/products'
+import { PROJECTS } from '../data/projects'
 import canaparh from '../assets/canaparh-icon.svg'
 import jramatakar from '../assets/jramatakar-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
-import naxagicFirst from '../assets/naxagic_first.jpg'
-import naxagicSecond from '../assets/naxagic_second.jpg'
-import naxagicThree from '../assets/naxagic_three.jpg'
 import vibroIcon from '../assets/vibro-icon.svg'
 
 const SERVICES = [
@@ -26,15 +25,16 @@ const SERVICES = [
   },
 ]
 
-const PROJECTS = [
-  { title: 'Մ15 Վերին Պտղնի – Մասիս ճանապարհահատվածի հիմնանորոգում', img: naxagicFirst },
-  { title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ', img: naxagicSecond },
-  { title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում', img: naxagicThree },
-]
-
 export default function ProductDetailPage() {
   const { slug } = useParams()
   const product = PRODUCTS.find(p => p.slug === slug)
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    if (!product?.slides?.length) return
+    const timer = setInterval(() => setCurrent(c => (c + 1) % product.slides.length), 4000)
+    return () => clearInterval(timer)
+  }, [product])
 
   if (!product) return <Navigate to="/artadranq" replace />
 
@@ -55,11 +55,57 @@ export default function ProductDetailPage() {
         </div>
       </div>
 
-      {/* ── Product Hero ── */}
-      <div className="page-hero page-hero--tall">
-        <div className="page-hero-overlay" />
-        <img src={product.heroImg} alt={product.title} className="page-hero-img" loading="eager" />
-      </div>
+      {/* ── Product Hero / Slider ── */}
+      {product.slides?.length ? (
+        <div className="page-hero page-hero--tall" style={{ position: 'relative', overflow: 'hidden' }}>
+          {product.slides.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={product.title}
+              className="page-hero-img"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              style={{
+                position: i === 0 ? 'relative' : 'absolute',
+                top: 0, left: 0, width: '100%', height: '100%',
+                objectFit: 'cover',
+                opacity: i === current ? 1 : 0,
+                transition: 'opacity 0.7s ease',
+              }}
+            />
+          ))}
+          <div className="page-hero-overlay" style={{ pointerEvents: 'none' }} />
+          <button
+            onClick={() => setCurrent(c => (c - 1 + product.slides.length) % product.slides.length)}
+            aria-label="Previous"
+            style={{ position:'absolute', left:'16px', top:'50%', transform:'translateY(-50%)', background:'rgba(0,0,0,0.35)', border:'none', borderRadius:'50%', width:'40px', height:'40px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', zIndex: 10 }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" width="20" height="20"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </button>
+          <button
+            onClick={() => setCurrent(c => (c + 1) % product.slides.length)}
+            aria-label="Next"
+            style={{ position:'absolute', right:'16px', top:'50%', transform:'translateY(-50%)', background:'rgba(0,0,0,0.35)', border:'none', borderRadius:'50%', width:'40px', height:'40px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', zIndex: 10 }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" width="20" height="20"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </button>
+          <div style={{ position:'absolute', bottom:'14px', left:'50%', transform:'translateX(-50%)', display:'flex', gap:'8px', zIndex: 10 }}>
+            {product.slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                aria-label={`Slide ${i + 1}`}
+                style={{ width: i === current ? '24px' : '8px', height:'8px', borderRadius:'4px', border:'none', background: i === current ? '#EF6C00' : 'rgba(255,255,255,0.6)', cursor:'pointer', transition:'all 0.3s', padding:0 }}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="page-hero page-hero--tall">
+          <div className="page-hero-overlay" />
+          <img src={product.heroImg} alt={product.title} className="page-hero-img" loading="eager" />
+        </div>
+      )}
 
       {/* ── Description ── */}
       <section className="pd-desc-section">
@@ -76,7 +122,7 @@ export default function ProductDetailPage() {
                 </ul>
               </div>
             )}
-            {slug !== 'asfalt' && slug !== 'betone-favaryit' && slug !== 'betone-baryer' && slug !== 'bitum' && (
+            {slug !== 'asfalt' && slug !== 'betone-favaryit' && slug !== 'betone-baryer' && slug !== 'bitum' && slug !== 'bitumayin-emulsia' && slug !== 'vidroizolaciya' && (
               <>
                 <div className="pd-measurements">
                   <h3>Մայթի բետոնե սալիկներ</h3>
@@ -134,15 +180,15 @@ export default function ProductDetailPage() {
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">
-            {PROJECTS.map(p => (
-              <a key={p.title} href="#" className="img-card img-card--tall">
+            {PROJECTS.slice(0, 3).map((p) => (
+              <Link key={p.slug} to={`/naxagdzer/${encodeURIComponent(p.slug)}`} className="img-card img-card--tall">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
                   <span className="img-card-title">{p.title}</span>
                   <span className="img-card-link">Դիտել մանրամասները</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="section-footer">

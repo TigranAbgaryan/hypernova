@@ -1,31 +1,66 @@
+import naxagicFirst from '../assets/naxagic_first.jpg'
+import naxagicSecond from '../assets/naxagic_second.jpg'
+import naxagicThree from '../assets/naxagic_three.jpg'
+import m2_1 from '../assets/m2/M2-1.jpg'
+import m2_3a from '../assets/m2/M2-3.jpeg'
+import m2_3b from '../assets/m2/M2-3.jpg'
+import m2_5 from '../assets/m2/M2-5.jpg'
+import m2_6 from '../assets/m2/M2-6.jpg'
+import m2_7 from '../assets/m2/M2-7.jpg'
+import m2_8 from '../assets/m2/M2-8.jpg'
+import m2_9 from '../assets/m2/M2-9.jpg'
+import m2_12 from '../assets/m2/M2-12.JPG'
+import m15_1 from '../assets/m15/M15-1.jpg'
+import m15_2 from '../assets/m15/M15-2.jpg'
+import m15_3 from '../assets/m15/M15-3.jpg'
+import m15_4 from '../assets/m15/M15-4.jpg'
+import m15_5 from '../assets/m15/M15-5.jpg'
+import m15_6 from '../assets/m15/M15-6.jpg'
+
 export const PROJECTS = [
+  {
+    slug: 'verin-ptghni',
+    title: 'Մ15 Վերին Պտղնի – Մասիս ճանապարհահատվածի հիմնանորոգում',
+    shortTitle: 'Վերին Պտղնի',
+    img: naxagicFirst,
+    heroImg: m15_1,
+    slides: [m15_1, m15_2, m15_3, m15_4, m15_5, m15_6],
+    year: '2024',
+    length: '15.0 km',
+    type: 'Ճanаparhi hіmnanorogum',
+    region: 'Ararat marz',
+    desc: 'Մ-15, /Մ-4/ (Վերին Պտղնի) - Մասիսի տրանսպորտային հանգույց (Երևանի շրջանց) միջպետական նշանակության ավտոճանապարհի կմ19+900-կմ29+400 հատվածի հիմնանորոգման աշխատանքները',
+    desc2: '2024թ-ին շահագործման է հանձնվել',
+    client: 'ՀH Endlaynum Nakhararutyun',
+  },
+  {
+    slug: 'yerevan-erasx',
+    title: 'Մ-2, Երևան-Երասխ-Գորիս-Մեղրի-ՀՀ սահման միջպետական նշանակության ավտոճանապարհի հիմնանորոգում',
+    shortTitle: 'Երևան-Երասխ',
+    img: naxagicSecond,
+    heroImg: m2_1,
+    slides: [m2_1, m2_3a, m2_3b, m2_5, m2_6, m2_7, m2_8, m2_9, m2_12],
+    year: '2025',
+    length: '8.2 km',
+    type: 'Norkavayrum',
+    region: 'Ararat marz',
+    desc: 'Մ-2, Երևան-Երասխ-Գորիս-Մեղրի-ՀՀ սահման միջպետական նշանակության ավտոճանապարհի կմ 47+475 -կմ 53+150 հատվածի հիմնանորոգման աշխատանքներ',
+    desc2: '2025թ-ին շահագործման է հանձնվել',
+    client: 'Ararat marzi varchapetaran',
+  },
   {
     slug: 'Արևիկ – Տանձուտ',
     title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում',
     shortTitle: 'Արևիկ – Տանձուտ',
-    img: 'https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=800&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=1600&q=80',
+    img: naxagicThree,
+    heroImg: naxagicThree,
     year: '2024',
     length: '12.5 km',
     type: 'Ճanaparhi verakaghnumy',
     region: 'Lori marz',
-    desc: '5.3-19 arpiky. Bandrum artadranaky p3+000 – tal 5+400: Verchnakanum 130 km/jam arjunakey ev bnakavshutyany:',
-    desc2: 'Nakhagitsy artadrum er khosher sharjnakunery, storerov ev bnakavshutyanov mi amuty boloroviny: Tsntsving shaynagaghtsutyan bnagahatum, nerk shinarararutyuny, bnbakalannigvatsbutsyan gordzitsy patrasted, kaloshoghchannеr. Artadranaky patrastel e mi kalyats GOST-nerum ev SNiP normayvorenum: Нaxagitsy vardzutyunits kayacratsvats e Hayastani Hanrapetutyan hakakalatselov shaynagaghtsutyan sxemy: Shaynagaghtsvats artadranaky em voraki partezner, Hambyurgyats shaynagaghtsutyan bnnakavshutyun ev kachyakin patanelner: Ashxatavarky avartvel e 2025 tvakanin:',
+    desc: 'Տ-3-19 Արևիկ–Տանձուտ ավտոճանապարհի կմ 0+000 – կմ 3+400 հատվածի հիմնանորոգման աշխատանքներ։',
+    desc2: 'Նախագծի շրջանակում իրականացվել են ճանապարհային ծածկի հիմնանորոգման, հողային աշխատանքների, ջրահեռացման համակարգերի բարելավման և երթևեկության անվտանգության բարձրացմանն ուղղված միջոցառումներ՝ ապահովելով ճանապարհահատվածի հուսալի և երկարատև շահագործումը։ Աշխատանքներն ավարտվել և ճանապարհահատվածը շահագործման է հանձնվել 2025 թվականին',
     client: 'ՀH Endlaynum Nakhararutyun',
-  },
-  {
-    slug: 'yerevan-artashat',
-    title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ',
-    shortTitle: 'Yerevan – Artashat',
-    img: 'https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?w=800&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1533073526757-2c8ca1df9f1c?w=1600&q=80',
-    year: '2024',
-    length: '8.2 km',
-    type: 'Norkavayrum',
-    region: 'Ararat marz',
-    desc: 'M-2 khachmanek banakavayr sharjnakunery – M-2 yerevan–artashat avtononbannayuarns hamakargi shaynagaghtsutyan ev аvtonobayin sharjnakunery hrashaghnakel:',
-    desc2: 'Nakhagitsy nerkayutsnum er sharjnakunery nork banakavayri bnnakavshutyunum: Artadranaky patrasted er barzr shaynagaghtsutyan sxema ev amur bnakavshutyun: Ashxatavarky avartvel e nakhagtsvayin zhamnakatssum:',
-    client: 'Ararat marzi varchapetaran',
   },
   {
     slug: 'm2-gyumri',
