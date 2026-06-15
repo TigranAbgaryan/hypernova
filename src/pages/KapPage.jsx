@@ -47,7 +47,7 @@ export default function KapPage() {
       </div>
 
       {/* ── Hero ── */}
-      <div className="page-hero">
+      <div className="page-hero page-hero--tall">
         <div className="page-hero-overlay" />
         <img src={heroImg} alt="Կապ" className="page-hero-img" loading="eager" />
       </div>

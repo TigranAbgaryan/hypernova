@@ -22,6 +22,7 @@ import arevik_video from '../assets/arevik/Arevik 2.MP4'
 export const PROJECTS = [
   {
     slug: 'verin-ptghni',
+    tab: 'canaparhashinutyun',
     title: 'Մ15 Վերին Պտղնի – Մասիս ճանապարհահատվածի հիմնանորոգում',
     shortTitle: 'Վերին Պտղնի',
     img: naxagicFirst,
@@ -37,6 +38,7 @@ export const PROJECTS = [
   },
   {
     slug: 'yerevan-erasx',
+    tab: 'canaparhashinutyun',
     title: 'Մ-2, Երևան-Երասխ-Գորիս-Մեղրի-ՀՀ սահման միջպետական նշանակության ավտոճանապարհի հիմնանորոգում',
     shortTitle: 'Երևան-Երասխ',
     img: naxagicSecond,
@@ -52,6 +54,7 @@ export const PROJECTS = [
   },
   {
     slug: 'Արևիկ – Տանձուտ',
+    tab: 'canaparhashinutyun',
     title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում',
     shortTitle: 'Արևիկ – Տանձուտ',
     img: arevik1,
@@ -66,21 +69,8 @@ export const PROJECTS = [
     client: 'ՀH Endlaynum Nakhararutyun',
   },
   {
-    slug: 'm2-gyumri',
-    title: 'Մ-2, Երևան - Երասխ - Գորիս - Մեղրի - ՀՀ սահման միջպետական նշանակության ավտոճանապարհ',
-    shortTitle: 'М-2 Yerevan – Gyumri',
-    img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80',
-    year: '2023',
-    length: '18.7 km',
-    type: 'Avtononbannay verakaghnumy',
-    region: 'Shirak marz',
-    desc: 'Amenamarc avtononbannayuarni verakaghnumy: Nakhagitsy arjunakel e shaynagaghtsvats sharjnakunery ev banakavayri shaynagaghtsutyan hakakalatsumy:',
-    desc2: 'Mets masshtaby nakhagitsy patrastel e mech korstutyun ev mshakuytabanak sharjnakuner: Ashxatavarky kazmakerpvel e аpahov patanelnerum ev avartvel e 2023 tvakanin:',
-    client: 'ՀH Endlaynum Nakhararutyun',
-  },
-  {
     slug: 'gjumri-lanchk',
+    tab: 'shemayin',
     title: 'Gjumri – Lanchk ճanaparhnshаtuvatd',
     shortTitle: 'Gjumri – Lanchk',
     img: 'https://images.unsplash.com/photo-1519003300449-424ad0405076?w=800&q=80',

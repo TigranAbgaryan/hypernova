@@ -850,7 +850,7 @@ body {
 }
 
 .page-hero--tall {
-  height: 700px;
+  height: 500px;
 }
 
 .page-hero-img {
@@ -871,6 +871,38 @@ body {
 .prod-page-section {
   background: #ffffff;
   padding: 64px 0 80px;
+}
+
+/* ── Project / Product Tabs ── */
+.proj-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.proj-tabs::-webkit-scrollbar { display: none; }
+
+.proj-tab-btn {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.proj-tab-btn:hover { color: #111827; }
+.proj-tab-btn.active {
+  color: #EF6C00;
+  border-bottom-color: #EF6C00;
+  font-weight: 600;
 }
 
 .prod-page-title {
@@ -1443,7 +1475,7 @@ body {
 /* ── Project detail page ── */
 .proj-hero-banner {
   position: relative;
-  height: 700px;
+  height: 500px;
   overflow: hidden;
   background: #1f2937;
 }
@@ -1931,8 +1963,8 @@ body {
 
   /* Page hero */
   .page-hero { height: 220px; }
-  .page-hero--tall { height: 320px; }
-  .proj-hero-banner { height: 280px; }
+  .page-hero--tall { height: 500px; }
+  .proj-hero-banner { height: 500px; }
 
   /* Project detail */
   .proj-detail-inner {
@@ -1981,8 +2013,8 @@ body {
   .hero-content { padding: 40px 16px; }
   .hero-title { font-size: clamp(20px, 6vw, 32px) !important; }
   .page-hero { height: 180px; }
-  .page-hero--tall { height: 220px; }
-  .proj-hero-banner { height: 200px; }
+  .page-hero--tall { height: 500px; }
+  .proj-hero-banner { height: 500px; }
   .hero-arrow { display: flex; width: 36px; height: 36px; }
   .hero-arrow--prev { left: 12px; }
   .hero-arrow--next { right: 12px; }

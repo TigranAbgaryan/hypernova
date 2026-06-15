@@ -45,7 +45,7 @@ export default function ProductsPage() {
       </div>
 
       {/* ── Page Hero ── */}
-      <div className="page-hero">
+      <div className="page-hero page-hero--tall">
         <div className="page-hero-overlay" />
         <img
           src={artadranqHome}

@@ -51,7 +51,7 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* ── Hero ── */}
-      <div className="page-hero">
+      <div className="page-hero page-hero--tall">
         <div className="page-hero-overlay" />
         <img
           src={canaparhFirst}

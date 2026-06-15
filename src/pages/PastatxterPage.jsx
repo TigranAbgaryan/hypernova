@@ -9,9 +9,9 @@ import pastatuxt2 from '../assets/pastatuxt_2.jpg'
 import pastatuxt3 from '../assets/pastatuxt_3.png'
 import pastatuxt4 from '../assets/pastatuxt_4.png'
 import othersPastatuxtFirst from '../assets/others_pastatuxt_1.jpg'
-import othersPastatuxtSecond from '../assets/others_pastatuxt_2.png'
 import othersPastatuxtThird from '../assets/others_pastatuxt_3.png'
-import othersPastatuxtFourth from '../assets/others_pastatuxt_4.jpg'
+import auditPdf from '../assets/audit 24-25 Hypernova.pdf'
+import n70Pdf from '../assets/N70h3280426000003 (2).pdf'
 
 const SERVICE_CARDS = [
   {
@@ -40,9 +40,9 @@ const LICENSES = [
 
 const OTHER_DOCS = [
   { id: 5, title: 'Կանոնադրություն', img: othersPastatuxtFirst },
-  { id: 6, title: 'Հարկային գրանցում', img: othersPastatuxtSecond },
+  { id: 6, title: 'Աուդիտ 2024–2025', pdf: auditPdf },
   { id: 7, title: 'Բնապահպանական եզրակացություն', img: othersPastatuxtThird },
-  { id: 8, title: 'Աշխատանքային անվտանգություն', img: othersPastatuxtFourth },
+  { id: 8, title: 'Աշխատանքային անվտանգություն', pdf: n70Pdf },
 ]
 
 function DocGallery({ items }) {
@@ -50,7 +50,26 @@ function DocGallery({ items }) {
   return (
     <>
       <div className="doc-gallery">
-        {items.map(doc => (
+        {items.map(doc => doc.pdf ? (
+          <a
+            key={doc.id}
+            href={doc.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="doc-gallery-item doc-gallery-item--pdf"
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', textDecoration: 'none', background: '#f9fafb', border: '2px dashed #e5e7eb', borderRadius: '8px', padding: '32px 16px', color: '#111827' }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="#EF6C00" strokeWidth="1.5" width="48" height="48">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeLinecap="round" strokeLinejoin="round" />
+              <polyline points="14 2 14 8 20 8" strokeLinecap="round" strokeLinejoin="round" />
+              <line x1="9" y1="13" x2="15" y2="13" strokeLinecap="round" />
+              <line x1="9" y1="17" x2="15" y2="17" strokeLinecap="round" />
+              <line x1="9" y1="9" x2="11" y2="9" strokeLinecap="round" />
+            </svg>
+            <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'center' }}>{doc.title}</span>
+            <span style={{ fontSize: '12px', color: '#EF6C00' }}>Բացել PDF</span>
+          </a>
+        ) : (
           <button key={doc.id} className="doc-gallery-item" onClick={() => setLightbox(doc)}>
             <img src={doc.img} alt={doc.title} loading="lazy" />
             <div className="doc-gallery-overlay">
