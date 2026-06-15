@@ -119,6 +119,13 @@ export default function ProjectDetailPage() {
             <h1 className="proj-detail-title">{project.title}</h1>
             {project.desc && <p className="proj-detail-lead">{project.desc}</p>}
             {project.desc2 && <p className="proj-detail-text">{project.desc2}</p>}
+            {project.video && (
+              <video
+                src={project.video}
+                controls
+                style={{ width: '100%', borderRadius: '8px', marginTop: '24px', display: 'block' }}
+              />
+            )}
           </div>
 
 

@@ -14,9 +14,23 @@ import beton2 from '../assets/beton/Բետոն 2.jpeg'
 import beton3 from '../assets/beton/Բետոն 3.jpeg'
 import beton4 from '../assets/beton/Բետոն 4.jpg'
 import erkatbeton from '../assets/erkatbeton.jpg'
+import erkat1 from '../assets/erkatbeton/ԵԲ կոնս.jpg'
+import erkat2 from '../assets/erkatbeton/ԵԲ կոնստրուկցիաներ.jpg'
+import erkat3 from '../assets/erkatbeton/Երկաթբետոնե կոնստրուկցիաներ.jpg'
+import erkat4 from '../assets/erkatbeton/ԵԲ կոնս2.jpg'
 import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
+import bitumEmulsia1 from '../assets/bitumayinemulsia/bitumayin_emulsia.jpg'
 import vibrobeton from '../assets/vibrobeton.jpg'
+import vibro1 from '../assets/vibro/Վիբրո 1.jpeg'
+import vibro2 from '../assets/vibro/Վիբրո 2.jpg'
+import vibro3 from '../assets/vibro/Վիբրո 3.jpg'
+import vibro4 from '../assets/vibro/Վիբրո 4.jpeg'
+import vibro5 from '../assets/vibro/Վիբրո 5.jpeg'
+import vibro6 from '../assets/vibro/Վիբրո 6.jpeg'
+import vibro7 from '../assets/vibro/Վիբրո 7.jpeg'
 import bitum from '../assets/bitum.jpg'
+import bitum1 from '../assets/bitum/Բիտում 1.jpeg'
+import bitum2 from '../assets/bitum/Բիտում 2.jpeg'
 
 
 export const PRODUCTS = [
@@ -50,7 +64,8 @@ export const PRODUCTS = [
     slug: 'betone-baryer',
     title: 'Երկաթբետոնե կոնստրուկցիաներ',
     img: erkatbeton,
-    heroImg: artadranqFirst,
+    heroImg: erkat1,
+    slides: [erkat1, erkat2, erkat3, erkat4],
     category: 'Անվտանգությունի համակարգեր',
     desc: 'Սերտիֆիկացված երկաթբետոնե կոնստրուկցիաների արտադրություն և վաճառք, մասնավորապես.',
     items: [
@@ -71,7 +86,7 @@ export const PRODUCTS = [
     slug: 'bitumayin-emulsia',
     title: 'Բիտումային էմուլսիա',
     img: bitumayinEmulsia,
-    heroImg: artadranqFirst,
+    heroImg: bitumEmulsia1,
     noLink: true,
     category: 'Litsker ev nюter',
     desc: 'Բիտումային էմուլսիայի արտադրություն և վաճառք',
@@ -87,7 +102,8 @@ export const PRODUCTS = [
     slug: 'vidroizolaciya',
     title: 'Վիբրոսեղմամբ բետոնե պատրաստվածքներ',
     img: vibrobeton,
-    heroImg: artadranqFirst,
+    heroImg: vibro1,
+    slides: [vibro1, vibro2, vibro3, vibro4, vibro5, vibro6, vibro7],
     category: 'Izolacion nюter',
     desc: 'Սերտիֆիկացված վիբրոսեղմամբ բետոնե պատրաստվածքների արտադրություն և վաճառք, մասնավորապես.',
     desc2: 'Mer vidroizolaciyay barzr oraky e ev angnum e uzhey mekcnel: Pataskhanum e erkararaseli normayvorerum ev kiriararkvum e mshakuytabanak materialov:',
@@ -102,7 +118,8 @@ export const PRODUCTS = [
     slug: 'bitum',
     title: 'Բիտում',
     img: bitum,
-    heroImg: artadranqFirst,
+    heroImg: bitum1,
+    slides: [bitum1, bitum2],
     category: 'Բetone artadranq',
     desc: 'Սերտիֆիկացված բիտումի ուղղակի ներմուծում և վաճառք',
     desc2: 'Artadranky artadrvum e vibropressavorman eghanakov, vory apahov e barzr shtapatrutyun: Hasaneliutyan u barevarman tesnaketerutyan mi pert sharq:',

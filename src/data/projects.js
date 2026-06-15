@@ -16,6 +16,8 @@ import m15_3 from '../assets/m15/M15-3.jpg'
 import m15_4 from '../assets/m15/M15-4.jpg'
 import m15_5 from '../assets/m15/M15-5.jpg'
 import m15_6 from '../assets/m15/M15-6.jpg'
+import arevik1 from '../assets/arevik/Arevik1.jpg'
+import arevik_video from '../assets/arevik/Arevik 2.MP4'
 
 export const PROJECTS = [
   {
@@ -52,8 +54,9 @@ export const PROJECTS = [
     slug: 'Արևիկ – Տանձուտ',
     title: 'Արևիկ – Տանձուտ ճանապարհահատվածի հիմնանորոգում',
     shortTitle: 'Արևիկ – Տանձուտ',
-    img: naxagicThree,
-    heroImg: naxagicThree,
+    img: arevik1,
+    heroImg: arevik1,
+    video: arevik_video,
     year: '2024',
     length: '12.5 km',
     type: 'Ճanaparhi verakaghnumy',
