@@ -850,7 +850,7 @@ body {
 }
 
 .page-hero--tall {
-  height: 500px;
+  height: 700px;
 }
 
 .page-hero-img {
@@ -1443,7 +1443,7 @@ body {
 /* ── Project detail page ── */
 .proj-hero-banner {
   position: relative;
-  height: 420px;
+  height: 700px;
   overflow: hidden;
   background: #1f2937;
 }
