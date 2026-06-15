@@ -47,7 +47,7 @@ export const PRODUCTS = [
   {
     slug: 'betone-favaryit',
     title: 'Բետոն',
-    img: beton,
+    img: beton4,
     heroImg: beton1,
     slides: [beton1, beton2, beton3, beton4],
     category: 'Բetone artadranq',
