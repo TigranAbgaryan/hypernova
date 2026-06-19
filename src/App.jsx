@@ -15,8 +15,24 @@ import KapPage from './pages/KapPage'
 import './App.css'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0)
+      return
+    }
+
+    const id = hash.replace('#', '')
+    const el = document.getElementById(id)
+    if (!el) return
+
+    const navbar = document.querySelector('.navbar')
+    const offset = navbar ? navbar.getBoundingClientRect().height + 12 : 76
+    const top = el.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }, [pathname, hash])
+
   return null
 }
 

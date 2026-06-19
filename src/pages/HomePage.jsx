@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { PRODUCTS } from '../data/products'
 import { PROJECTS } from '../data/projects'
 import canaparh from '../assets/canaparh-icon.svg'
@@ -56,6 +56,11 @@ function CheckIcon() {
 
 export default function HomePage() {
   const [current, setCurrent] = useState(0)
+  const [isServicesOpenMobile, setIsServicesOpenMobile] = useState(false)
+  const [isProductsOpenMobile, setIsProductsOpenMobile] = useState(false)
+  const [isProjectsOpenMobile, setIsProjectsOpenMobile] = useState(false)
+  const [isAboutOpenMobile, setIsAboutOpenMobile] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -93,11 +98,11 @@ export default function HomePage() {
 
         <div className="hero-content">
             <img src={logo} alt="Hypernova" className="hero-logo" />
-          <h2 className="hero-title" style={{ paddingBottom: 0, color: '#fff', fontStyle: 'italic', fontSize: 'clamp(14px, 2.2vw, 22px)' }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
-            <h2 className="hero-title" style={{ color: '#fff', fontStyle: 'italic', fontSize: 'clamp(14px, 2.2vw, 22px)' }}>արդի տեխնոլոգիաններ</h2>
+          <h2 className="hero-title hero-title--compact" style={{ paddingBottom: 0, color: '#fff', fontStyle: 'italic' }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
+            <h2 className="hero-title hero-title--compact" style={{ color: '#fff', fontStyle: 'italic' }}>արդի տեխնոլոգիաններ</h2>
 
           <div className="hero-btns">
-            <button className="btn-primary" onClick={() => document.querySelector('.about').scrollIntoView({ behavior: 'smooth' })}>
+            <button className="btn-primary" onClick={() => navigate('/mer-masin')}>
                 Մեր մասին
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
                 <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -143,10 +148,22 @@ export default function HomePage() {
       </section> */}
 
       {/* ── Services ── */}
-      <section className="services">
+      <section id="services" className="services">
         <div className="container">
-          <h2>Մեր ծառայությունները</h2>
-          <div className="services-grid">
+          <h2 className="services-title-desktop">Մեր ծառայությունները</h2>
+          <button
+            className={`services-accordion-toggle${isServicesOpenMobile ? ' is-open' : ''}`}
+            onClick={() => setIsServicesOpenMobile(v => !v)}
+            aria-expanded={isServicesOpenMobile}
+            aria-controls="home-services-grid"
+            type="button"
+          >
+            <span>Մեր ծառայությունները</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div id="home-services-grid" className={`services-grid services-grid--home-mobile${isServicesOpenMobile ? ' is-open' : ''}`}>
             {SERVICES.map(s => (
               <div key={s.title} className={`service-card${s.active ? ' active' : ''}`}>
                 <div className="service-icon">{s.icon}</div>
@@ -155,7 +172,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="services-footer">
+          <div className="services-footer home-mobile-hide">
             <Link to="/carayutyunner" className="btn-services-all">
               Բոլոր ծառայությունները
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
@@ -167,10 +184,22 @@ export default function HomePage() {
       </section>
 
       {/* ── Products ── */}
-      <section className="products">
+      <section id="products" className="products">
         <div className="container">
-          <h2>Մեր արտադրանքը</h2>
-          <div className="img-grid-3x2">
+          <h2 className="products-title-desktop">Մեր արտադրանքը</h2>
+          <button
+            className={`products-accordion-toggle${isProductsOpenMobile ? ' is-open' : ''}`}
+            onClick={() => setIsProductsOpenMobile(v => !v)}
+            aria-expanded={isProductsOpenMobile}
+            aria-controls="home-products-grid"
+            type="button"
+          >
+            <span>Մեր արտադրանքը</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div id="home-products-grid" className={`img-grid-3x2 img-grid-3x2--home-mobile${isProductsOpenMobile ? ' is-open' : ''}`}>
             {PRODUCTS.map(p => p.noLink ? (
               <div key={p.slug} className="img-card">
                 <img src={p.img} alt={p.title} loading="lazy" />
@@ -190,7 +219,7 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="section-footer">
+          <div className="section-footer home-mobile-hide">
             <Link to="/artadranq" className="btn-more">
               Ամբոլջական ցանկը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
@@ -202,10 +231,22 @@ export default function HomePage() {
       </section>
 
       {/* ── Projects ── */}
-      <section className="projects">
+      <section id="projects" className="projects">
         <div className="container">
-          <h2>Մեր նախագծերը</h2>
-          <div className="img-grid-3col">
+          <h2 className="projects-title-desktop">Մեր նախագծերը</h2>
+          <button
+            className={`projects-accordion-toggle${isProjectsOpenMobile ? ' is-open' : ''}`}
+            onClick={() => setIsProjectsOpenMobile(v => !v)}
+            aria-expanded={isProjectsOpenMobile}
+            aria-controls="home-projects-grid"
+            type="button"
+          >
+            <span>Մեր նախագծերը</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div id="home-projects-grid" className={`img-grid-3col img-grid-3col--home-mobile${isProjectsOpenMobile ? ' is-open' : ''}`}>
             {PROJECTS.slice(0, 3).map((p) => (
               <Link key={p.slug} to={`/naxagdzer/${encodeURIComponent(p.slug)}`} className="img-card img-card--tall">
                 <img src={p.img} alt={p.title} loading="lazy" />
@@ -217,7 +258,7 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="section-footer">
+          <div className="section-footer home-mobile-hide">
             <Link to="/naxagdzer" className="btn-more">
               Դիտել բոլոր նախագծերը
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
@@ -229,10 +270,22 @@ export default function HomePage() {
       </section>
 
       {/* ── About ── */}
-      <section className="about">
+      <section id="about" className="about">
         <div className="container">
-          <h2>Մեր մասին</h2>
-          <div className="about-text">
+          <h2 className="about-title-desktop">Մեր մասին</h2>
+          <button
+            className={`about-accordion-toggle${isAboutOpenMobile ? ' is-open' : ''}`}
+            onClick={() => setIsAboutOpenMobile(v => !v)}
+            aria-expanded={isAboutOpenMobile}
+            aria-controls="home-about-content"
+            type="button"
+          >
+            <span>Մեր մասին</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="18" height="18" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div id="home-about-content" className={`about-text about-mobile-content${isAboutOpenMobile ? ' is-open' : ''}`}>
             <p>Հիպերնովա ՍՊԸ-ն հիմնադրվել է 2019 թ.-ի հուլիսի 12-ին: Ընկերության գործունեության հիմնական ուղղվածությունը
                 շինարարական նյութերի արտադրությունն է և շինարարական աշխատանքների իրականացումը: Ընկերությունը հիմնադրման
                 օրվանից ձեռնամուղ է եղել բարձր որակավորում ունեցող մասնագետների հետ աշխատանքային հարաբերությունների
@@ -246,13 +299,13 @@ export default function HomePage() {
                 համապատասխանության սերտիֆիկատներ:
             </p>
           </div>
-          <div className="about-images">
+          <div className={`about-images about-mobile-content${isAboutOpenMobile ? ' is-open' : ''}`}>
             <img className="about-img" src={mermasinFirst} alt="Մեր մասին 1" loading="lazy" />
             <img className="about-img" src={mermasinSecond} alt="Մեր մասին 2" loading="lazy" />
             <img className="about-img" src={mermasinThree} alt="Մեր մասին 3" loading="lazy" />
           </div>
         </div>
-        <div className="about-stats">
+        <div className={`about-stats about-mobile-content${isAboutOpenMobile ? ' is-open' : ''}`}>
           <div className="stat-item">
             <span className="stat-num">200 +</span>
             <span className="stat-label">Ավարտված նախագծեր</span>
