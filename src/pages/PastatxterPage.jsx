@@ -32,17 +32,17 @@ const SERVICE_CARDS = [
 ]
 
 const LICENSES = [
-  { id: 1, title: 'Լիցենզիա N 001', img: pastatuxt1 },
-  { id: 2, title: 'Լիցենզիա N 002', img: pastatuxt2 },
-  { id: 3, title: 'Սերտիֆիկատ ISO 9001', img: pastatuxt3 },
-  { id: 4, title: 'Սերտիֆիկատ ISO 14001', img: pastatuxt4 },
+  { id: 1, img: pastatuxt1 },
+  { id: 2, img: pastatuxt2 },
+  { id: 3, img: pastatuxt3 },
+  { id: 4, img: pastatuxt4 },
 ]
 
 const OTHER_DOCS = [
-  { id: 5, title: 'Կանոնադրություն', img: othersPastatuxtFirst },
-  { id: 6, title: 'Աուդիտ 2024–2025', pdf: auditPdf },
-  { id: 7, title: 'Բնապահպանական եզրակացություն', img: othersPastatuxtThird },
-  { id: 8, title: 'Աշխատանքային անվտանգություն', pdf: n70Pdf },
+  { id: 5, img: othersPastatuxtFirst },
+  { id: 6, pdf: auditPdf },
+  { id: 7,  img: othersPastatuxtThird },
+  { id: 8,  pdf: n70Pdf },
 ]
 
 function DocGallery({ items }) {
