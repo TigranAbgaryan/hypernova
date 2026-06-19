@@ -93,8 +93,8 @@ export default function HomePage() {
 
         <div className="hero-content">
             <img src={logo} alt="Hypernova" className="hero-logo" />
-          <h2 className="hero-title" style={{ paddingBottom: 0 }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
-            <h2 className="hero-title">արդի տեխնոլոգիաններ</h2>
+          <h2 className="hero-title" style={{ paddingBottom: 0,color:"#fff" }}>Երաշխավորված որակ, պատասխանատվություն, </h2>
+            <h2 className="hero-title" style={{ color:"#fff" }}>արդի տեխնոլոգիաններ</h2>
 
           <div className="hero-btns">
             <button className="btn-primary" onClick={() => document.querySelector('.about').scrollIntoView({ behavior: 'smooth' })}>

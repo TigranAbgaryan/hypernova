@@ -831,6 +831,11 @@ body {
   padding-bottom :20px;
 }
 
+.hero .hero-title {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+}
+
 .breadcrumb-inner svg {
   color: #9ca3af;
   flex-shrink: 0;
@@ -2010,6 +2015,7 @@ body {
   .stat-item:last-child { border-bottom: none; }
 
   /* Hero */
+  .hero { height: 50vh; min-height: 50vh; }
   .hero-content { padding: 40px 16px; }
   .hero-title { font-size: clamp(20px, 6vw, 32px) !important; }
   .page-hero { height: 180px; }
