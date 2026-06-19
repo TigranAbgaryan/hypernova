@@ -7,6 +7,8 @@ import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
 import canaparhFirst from '../assets/canaparh.jpg'
+import carayutyunSecond from '../assets/carayutyun_2.jpg'
+import carayutyunFourth from '../assets/carayutyun_4.jpg'
 
 const HOME_SERVICES = [
   {
@@ -28,8 +30,32 @@ const HOME_SERVICES = [
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
-  const service = SERVICES.find(s => s.slug === slug)
-  const others = SERVICES.filter(s => s.slug !== slug)
+  const decodedSlug = decodeURIComponent(slug || '')
+  const slugAliases = {
+    'ջրամատակարարում-և-ջրահեռացում': 'betone-ashxatanq',
+    'տեխնիկայի-վարձակալություն': 'bnbakalonnigvatsbutsyan',
+  }
+  const resolvedSlug = slugAliases[decodedSlug] || decodedSlug
+  const service = SERVICES.find(s => s.slug === resolvedSlug)
+  const others = SERVICES.filter(s => s.slug !== resolvedSlug)
+  const isTechRental = decodedSlug === 'տեխնիկայի-վարձակալություն'
+  const isWaterDrainage = decodedSlug === 'ջրամատակարարում-և-ջրահեռացում'
+
+  const detailTitle = isTechRental
+    ? 'Տեխնիկայի վարձակալություն'
+    : isWaterDrainage
+      ? 'Ջրամատակարարում և ջրահեռացում'
+      : 'Ճանապարհաշինություն'
+  const detailDescription = isTechRental
+    ? 'Առաջարկում ենք շինարարական և ճանապարհաշինական տեխնիկայի վարձակալության տարբեր ծավալի և բարդության աշխատանքների համար։'
+    : isWaterDrainage
+      ? 'Ապահովում ենք հուսալի և արդյունավետ ջրամատակարարման համակարգերի կառուցում տարատեսակ նշանակության օբյեկտների համար։'
+    : 'Մենք իրականացնում ենք բարձրորակ ասֆալտապատման աշխատանքներ՝ ապահովելով ամուր, հարթ և երկարատև ճանապարհային ծածկեր։ Մեր փորձառու մասնագետների թիմը և ժամանակակից տեխնիկան թույլ են տալիս արդյունավետ կերպով իրականացնել ինչպես փոքր, այնպես էլ մեծածավալ նախագծեր՝ պահպանելով որակի և անվտանգության բոլոր չափանիշները։ Ասֆալտապատման ծառայությունները ներառում են տարածքի նախապատրաստում, հիմքի հարթեցում և ամրացում, ասֆալտբետոնե խառնուրդի փռում և խտացում։ Աշխատանքներն իրականացվում են ժամանակակից տեխնոլոգիաներով և բարձրորակ նյութերով, ինչը երաշխավորում է ճանապարհի դիմացկունությունը տարբեր կլիմայական և շահագործման պայմաններում։ Մենք կատարում ենք ավտոճանապարհների, փողոցների, բակային տարածքների, կայանատեղիների, արդյունաբերական և կոմերցիոն տարածքների ասֆալտապատում՝ յուրաքանչյուր նախագծի համար առաջարկելով անհատական և արդյունավետ լուծումներ։ Մեր նպատակն է ստեղծել անվտանգ, հուսալի և երկարաժամկետ օգտագործման համար նախատեսված ճանապարհային ենթակառուցվածքներ, որոնք լիովին համապատասխանում են պատվիրատուի պահանջներին և ոլորտի բարձր չափանիշներին։'
+  const detailHeroImg = isTechRental
+    ? carayutyunFourth
+    : isWaterDrainage
+      ? carayutyunSecond
+      : canaparhFirst
 
   if (!service) return <Navigate to="/carayutyunner" replace />
 
@@ -54,7 +80,7 @@ export default function ServiceDetailPage() {
       <div className="page-hero page-hero--tall">
         <div className="page-hero-overlay" />
         <img
-          src={canaparhFirst}
+          src={detailHeroImg}
           alt={service.title}
           className="page-hero-img"
           loading="eager"
@@ -64,19 +90,16 @@ export default function ServiceDetailPage() {
       {/* ── Description ── */}
       <section className="pd-desc-section">
         <div className="container pd-desc-inner">
-          <h2 className="pd-desc-title">Ճանապարհաշինություն</h2>
+          <h2 className="pd-desc-title">{detailTitle}</h2>
           <div className="pd-desc-body">
-            <p>Մենք իրականացնում ենք բարձրորակ ասֆալտապատման աշխատանքներ՝ ապահովելով ամուր, հարթ և երկարատև ճանապարհային ծածկեր։ Մեր փորձառու մասնագետների թիմը և ժամանակակից տեխնիկան թույլ են տալիս արդյունավետ կերպով իրականացնել ինչպես փոքր, այնպես էլ մեծածավալ նախագծեր՝ պահպանելով որակի և անվտանգության բոլոր չափանիշները։
-Ասֆալտապատման ծառայությունները ներառում են տարածքի նախապատրաստում, հիմքի հարթեցում և ամրացում, ասֆալտբետոնե խառնուրդի փռում և խտացում։ Աշխատանքներն իրականացվում են ժամանակակից տեխնոլոգիաներով և բարձրորակ նյութերով, ինչը երաշխավորում է ճանապարհի դիմացկունությունը տարբեր կլիմայական և շահագործման պայմաններում։
-Մենք կատարում ենք ավտոճանապարհների, փողոցների, բակային տարածքների, կայանատեղիների, արդյունաբերական և կոմերցիոն տարածքների ասֆալտապատում՝ յուրաքանչյուր նախագծի համար առաջարկելով անհատական և արդյունավետ լուծումներ։
-Մեր նպատակն է ստեղծել անվտանգ, հուսալի և երկարաժամկետ օգտագործման համար նախատեսված ճանապարհային ենթակառուցվածքներ, որոնք լիովին համապատասխանում են պատվիրատուի պահանջներին և ոլորտի բարձր չափանիշներին։</p>
+            <p>{detailDescription}</p>
 
           </div>
         </div>
       </section>
 
       {/* ── Services ── */}
-      <section className="services">
+      {/* <section className="services">
         <div className="container">
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid">
@@ -97,10 +120,10 @@ export default function ServiceDetailPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Products ── */}
-      <section className="products">
+      <section className="products svc-detail-products">
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">

@@ -5,7 +5,6 @@ import artadranqFour from '../assets/artadranq_four.png'
 import artadranqFive from '../assets/artadranq_five.png'
 import artadranqSix from '../assets/artadranq_six.png'
 import asfaltbeton from '../assets/asfaltbeton.jpg'
-import asfalt1 from '../assets/asfalt/asfalt_first.jpg'
 import asfalt2 from '../assets/asfalt/asfalt_second.jpg'
 import asfalt3 from '../assets/asfalt/asfalt_three.jpg'
 import beton from '../assets/beton.jpg'
@@ -18,8 +17,13 @@ import erkat1 from '../assets/erkatbeton/ԵԲ կոնս.jpg'
 import erkat2 from '../assets/erkatbeton/ԵԲ կոնստրուկցիաներ.jpg'
 import erkat3 from '../assets/erkatbeton/Երկաթբետոնե կոնստրուկցիաներ.jpg'
 import erkat4 from '../assets/erkatbeton/ԵԲ կոնս2.jpg'
+import erkat5 from '../assets/erkatbeton/Կոնստրուկցիա 1.jpg'
+import erkat6 from '../assets/erkatbeton/Կոնստրուկցիա 3.jpeg'
+import erkat7 from '../assets/erkatbeton/Կոնստրուկցիա 4.jpeg'
 import bitumayinEmulsia from '../assets/bitumayin-emulsia.jpg'
 import bitumEmulsia1 from '../assets/bitumayinemulsia/bitumayin_emulsia.jpg'
+import bitumEmulsia2 from '../assets/bitumayinemulsia/bitumayin_emulsia_1.jpeg'
+import bitumEmulsia3 from '../assets/bitumayinemulsia/bitumayin_emilsia_2.jpeg'
 import vibrobeton from '../assets/vibrobeton.jpg'
 import vibro1 from '../assets/vibro/Վիբրո 1.jpeg'
 import vibro2 from '../assets/vibro/Վիբրո 2.jpg'
@@ -37,9 +41,9 @@ export const PRODUCTS = [
   {
     slug: 'asfalt',
     title: 'Ասֆալտբետոն',
-    img: asfaltbeton,
-    heroImg: asfalt1,
-    slides: [asfalt1, asfalt2, asfalt3],
+    img: asfalt2,
+    heroImg: asfalt2,
+    slides: [asfalt2, asfalt3],
     category: 'Ճանապարհաշինություն',
     desc: 'Սերտիֆիկացված ասֆալտբետոնի արտադրություն բոլոր տիպերի։',
    
@@ -63,9 +67,9 @@ export const PRODUCTS = [
   {
     slug: 'betone-baryer',
     title: 'Երկաթբետոնե կոնստրուկցիաներ',
-    img: erkatbeton,
+    img: erkat5,
     heroImg: erkat1,
-    slides: [erkat1, erkat2, erkat3, erkat4],
+    slides: [erkat1, erkat2, erkat3, erkat4, erkat5, erkat6, erkat7],
     category: 'Անվտանգությունի համակարգեր',
     desc: 'Սերտիֆիկացված երկաթբետոնե կոնստրուկցիաների արտադրություն և վաճառք, մասնավորապես.',
     items: [
@@ -85,8 +89,9 @@ export const PRODUCTS = [
   {
     slug: 'bitumayin-emulsia',
     title: 'Բիտումային էմուլսիա',
-    img: bitumayinEmulsia,
-    heroImg: bitumEmulsia1,
+    img: bitumEmulsia2,
+    heroImg: bitumEmulsia2,
+    slides: [bitumEmulsia2, bitumEmulsia3, bitumEmulsia1],
     noLink: true,
     category: 'Litsker ev nюter',
     desc: 'Բիտումային էմուլսիայի արտադրություն և վաճառք',

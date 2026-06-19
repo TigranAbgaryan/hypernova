@@ -26,7 +26,7 @@ export const SERVICES = [
   {
     slug: 'betone-ashxatanq',
     title: 'Բetone ashxatanq',
-    shortTitle: 'Betone',
+    shortTitle: 'ջրամատակարարում-և-ջրահեռացում',
     img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80',
     category: 'Betone artadranq',
@@ -47,7 +47,7 @@ export const SERVICES = [
   {
     slug: 'bnbakalonnigvatsbutsyan',
     title: 'Bnbakalannigvatsbutsyan gordzitsy',
-    shortTitle: 'Bnbakalannigvatsbutyan',
+    shortTitle: 'տեխնիկայի-վարձակալություն',
     img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80',
     heroImg: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80',
     category: 'Bnbakan ashxatanq',

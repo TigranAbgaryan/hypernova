@@ -37,13 +37,13 @@ const SERVICES = [
     heroImg: carayutyunFirst
   },
   {
-    slug: 'betone-ashxatanq',
+    slug: 'ջրամատակարարում-և-ջրահեռացում',
     title: 'Ջրամատակարարում և ջրահեռացում',
     img: carayutyunSecond,
     heroImg: carayutyunSecond
   },
   {
-    slug: 'bnbakalonnigvatsbutsyan',
+    slug: 'տեխնիկայի-վարձակալություն',
     title: 'Տեխնիկայի վարձակալություն',
     img: carayutyunFourth,
     heroImg: carayutyunFourth
@@ -83,12 +83,12 @@ export default function ServicesPage() {
 
           <div className="img-grid-2x2">
             {SERVICES.map((s, i) => (
-              <Link key={s.slug} to={`/carayutyunner/${s.slug}`} className="img-card">
+              <Link key={s.slug} to={`/carayutyunner/${encodeURIComponent(s.slug)}`} className="img-card">
                 <img src={s.img} alt={s.title} loading="lazy" />
                 <div className="img-card-overlay" />
                 <div className="img-card-content">
-                  <span className="img-card-title">{s.title}</span>
-                  {i === 0 && <span className="img-card-link">դիտել մանրամասները</span>}
+                <span className="img-card-title">{s.title}</span>
+                 <span className="img-card-link">դիտել մանրամասները</span>
                 </div>
               </Link>
             ))}

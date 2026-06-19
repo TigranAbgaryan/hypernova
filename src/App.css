@@ -568,6 +568,14 @@ body {
   transition: transform 0.35s ease;
 }
 
+.img-card img[alt="Բիտումային էմուլսիա"] {
+  object-fit: contain;
+}
+
+.svc-detail-products .img-card img {
+  object-fit: fill;
+}
+
 .img-card:hover img {
   transform: scale(1.05);
 }
