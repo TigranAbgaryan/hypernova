@@ -28,24 +28,24 @@ export default function Navbar() {
         <nav className={`nav-menu${isOpen ? ' nav-menu--open' : ''}`}>
           <ul className="nav-links">
             <li>
-              <Link to="/#services">
+              <NavLink to="/carayutyunner" className={({ isActive }) => isActive ? 'nav-active' : ''}>
                 Ծառայություններ
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/#products">
+              <NavLink to="/artadranq" className={({ isActive }) => isActive ? 'nav-active' : ''}>
                 Արտադրանք
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/#projects">
+              <NavLink to="/naxagdzer" className={({ isActive }) => isActive ? 'nav-active' : ''}>
                 Նախագծեր
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/#about">
+              <NavLink to="/mer-masin" className={({ isActive }) => isActive ? 'nav-active' : ''}>
                 Մեր մասին
-              </Link>
+              </NavLink>
             </li>
             <li>
               <NavLink to="/pastatxter" className={({ isActive }) => isActive ? 'nav-active' : ''}>
