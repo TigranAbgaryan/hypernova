@@ -24,17 +24,20 @@ const PETUTYUN_SLIDES = [petutyun1, petutyun2]
 
 const SERVICES = [
   {
+    slug: 'Ճանապարհաշինություն',
     title: 'Ճանապարհաշինություն',
     desc: 'Նախագծումից մինչև իրականացում՝ կառուցում ենք դիմացկուն և անվտանգ ճանապարհներ՝ ժամանակակից տեխնոլոգիաներով։',
     icon: <img src={canaparh} width="32" height="32" alt="" />,
   },
   {
+    slug: 'ջրամատակարարում-և-ջրահեռացում',
     title: 'Ջրամատակարարում և ջրահեռացում',
     desc: 'Ապահովում ենք հուսալի և արդյունավետ ջրամատակարարման համակարգերի կառուցում տարատեսակ նշանակության օբյեկտների համար։',
     icon: <img src={jramatakar} width="32" height="32" alt="" />,
   },
 
   {
+    slug: 'տեխնիկայի-վարձակալություն',
     title: 'Տեխնիկայի վարձակալություն',
     desc: 'Առաջարկում ենք շինարարական և ճանապարհաշինական տեխնիկայի վարձակալության տարբեր ծավալի և բարդության աշխատանքների համար։',
     icon: <img src={texnikayi} width="32" height="32" alt="" />,
@@ -242,11 +245,11 @@ export default function ProjectsPage() {
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid">
             {SERVICES.map(s => (
-              <div key={s.title} className={`service-card${s.active ? ' active' : ''}`}>
+              <Link key={s.slug} to={`/carayutyunner/${encodeURIComponent(s.slug)}`} className={`service-card svc-link-card${s.active ? ' active' : ''}`}>
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="services-footer">

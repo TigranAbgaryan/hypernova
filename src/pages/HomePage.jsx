@@ -21,16 +21,19 @@ const SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6]
 
 const SERVICES = [
   {
+    slug: 'Ճանապարհաշինություն',
     title: 'Ճանապարհաշինություն',
     desc: 'Նախագծումից մինչև իրականացում՝ կառուցում ենք դիմացկուն և անվտանգ ճանապարհներ՝ ժամանակակից տեխնոլոգիաներով։',
     icon: <img src={canaparh} width="32" height="32" alt="" />,
   },
   {
+    slug: 'ջրամատակարարում-և-ջրահեռացում',
     title: 'Ջրամատակարարում և ջրահեռացում',
     desc: 'Ապահովում ենք հուսալի և արդյունավետ ջրամատակարարման համակարգերի կառուցում տարատեսակ նշանակության օբյեկտների համար։',
     icon: <img src={jramatakar} width="32" height="32" alt="" />,
   },
   {
+    slug: 'տեխնիկայի-վարձակալություն',
     title: 'Տեխնիկայի վարձակալություն',
     desc: 'Առաջարկում ենք շինարարական և ճանապարհաշինական տեխնիկայի վարձակալության տարբեր ծավալի և բարդության աշխատանքների համար։',
     icon: <img src={texnikayi} width="32" height="32" alt="" />,
@@ -165,11 +168,11 @@ export default function HomePage() {
           </button>
           <div id="home-services-grid" className={`services-grid services-grid--home-mobile${isServicesOpenMobile ? ' is-open' : ''}`}>
             {SERVICES.map(s => (
-              <div key={s.title} className={`service-card${s.active ? ' active' : ''}`}>
+              <Link key={s.slug} to={`/carayutyunner/${encodeURIComponent(s.slug)}`} className={`service-card svc-link-card${s.active ? ' active' : ''}`}>
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="services-footer home-mobile-hide">
