@@ -78,7 +78,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* ── Hero ── */}
-      <div className="page-hero page-hero--tall">
+      <div className="page-hero page-hero--tall projects-page-hero">
         <div className="page-hero-overlay" />
         <img
           src={naxagcerTop}

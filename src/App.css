@@ -2016,11 +2016,13 @@ body {
 
   /* Hero */
   .hero { height: 50vh; min-height: 50vh; }
+  .page-hero,
+  .page-hero--tall,
+  .proj-hero-banner,
+  .pd-hero-slider,
+  .projects-page-hero { height: 18vh !important; min-height: 18vh !important; }
   .hero-content { padding: 40px 16px; }
   .hero-title { font-size: clamp(20px, 6vw, 32px) !important; }
-  .page-hero { height: 180px; }
-  .page-hero--tall { height: 500px; }
-  .proj-hero-banner { height: 500px; }
   .hero-arrow { display: flex; width: 36px; height: 36px; }
   .hero-arrow--prev { left: 12px; }
   .hero-arrow--next { right: 12px; }
