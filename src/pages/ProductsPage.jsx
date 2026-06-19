@@ -45,7 +45,7 @@ export default function ProductsPage() {
       </div>
 
       {/* ── Page Hero ── */}
-      <div className="page-hero page-hero--tall">
+      <div className="page-hero page-hero--tall products-list-hero">
         <div className="page-hero-overlay" />
         <img
           src={artadranqHome}
@@ -79,7 +79,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ── Services ── */}
-      <section className="services">
+      <section className="services products-mobile-hide">
         <div className="container">
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid services-grid--3">
@@ -103,7 +103,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ── Projects ── */}
-      <section className="projects">
+      <section className="projects products-mobile-hide">
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">

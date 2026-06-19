@@ -57,7 +57,7 @@ export default function ProductDetailPage() {
 
       {/* ── Product Hero / Slider ── */}
       {product.slides?.length ? (
-        <div className="page-hero page-hero--tall" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div className="page-hero page-hero--tall product-detail-hero" style={{ position: 'relative', overflow: 'hidden' }}>
           {product.slides.map((src, i) => (
             <img
               key={i}
@@ -101,7 +101,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
       ) : (
-        <div className="page-hero page-hero--tall">
+        <div className="page-hero page-hero--tall product-detail-hero">
           <div className="page-hero-overlay" />
           <img src={product.heroImg} alt={product.title} className="page-hero-img" loading="eager" />
         </div>
@@ -151,8 +151,27 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
+      {/* ── Other products (mobile only) ── */}
+      <section className="prod-page-section products-mobile-only">
+        <div className="container">
+          <h2 className="prod-page-title">Արտադրանք</h2>
+          <div className="prod-page-grid">
+            {PRODUCTS.filter(p => p.slug !== slug).map(p => (
+              <Link key={p.slug} to={`/artadranq/${p.slug}`} className="img-card">
+                <img src={p.img} alt={p.title} loading="lazy" />
+                <div className="img-card-overlay" />
+                <div className="img-card-content">
+                  <span className="img-card-title">{p.title}</span>
+                  <span className="img-card-link">դիտել մանրամասները</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Services ── */}
-      <section className="services">
+      <section className="services products-mobile-hide">
         <div className="container">
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid">
@@ -176,7 +195,7 @@ export default function ProductDetailPage() {
       </section>
 
       {/* ── Projects ── */}
-      <section className="projects">
+      <section className="projects products-mobile-hide">
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">

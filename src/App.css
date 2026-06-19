@@ -411,6 +411,10 @@ body {
   display: none;
 }
 
+.products-mobile-only {
+  display: none;
+}
+
 .products-accordion-toggle {
   display: none;
 }
@@ -1965,6 +1969,8 @@ body {
   .nav-phone-mobile { display: inline-flex; }
 
   .home-mobile-hide { display: none !important; }
+  .products-mobile-hide { display: none !important; }
+  .products-mobile-only { display: block; }
 
   /* Sections padding */
   .services,
@@ -2134,6 +2140,7 @@ body {
   .proj-hero-banner,
   .pd-hero-slider,
   .projects-page-hero { height: 18vh !important; min-height: 18vh !important; }
+  .products-list-hero { height: 18vh !important; min-height: 18vh !important; }
   .hero-content { padding: 40px 16px; }
   .hero-title { font-size: clamp(14px, 2.2vw, 22px) !important; }
   .hero .hero-title--compact { font-size: 10px !important; line-height: 1.15; }
@@ -2157,5 +2164,30 @@ body {
   /* Product/Service detail */
   .pd-hero-inner { grid-template-columns: 1fr; }
   .svc-card { flex-direction: column; }
+}
+
+/* Products page hero override */
+@media (max-width: 768px) {
+  .page-hero.page-hero--tall.products-list-hero {
+    height: 18vh !important;
+    min-height: 18vh !important;
+  }
+
+  .page-hero.page-hero--tall.product-detail-hero {
+    height: 40vh !important;
+    min-height: 40vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero.page-hero--tall.products-list-hero {
+    height: 18vh !important;
+    min-height: 18vh !important;
+  }
+
+  .page-hero.page-hero--tall.product-detail-hero {
+    height: 40vh !important;
+    min-height: 40vh !important;
+  }
 }
 
