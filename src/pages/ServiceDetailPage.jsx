@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { SERVICES } from '../data/services'
 import { PRODUCTS } from '../data/products'
 import { PROJECTS } from '../data/projects'
@@ -7,6 +8,7 @@ import jramatakar from '../assets/jramatakar-icon.svg'
 import jraheracum from '../assets/jraheracum-icon.svg'
 import texnikayi from '../assets/texnikayi-icon.svg'
 import canaparhFirst from '../assets/canaparh.jpg'
+import carayutyunFirst from '../assets/carayutyun_1.jpg'
 import carayutyunSecond from '../assets/carayutyun_2.jpg'
 import carayutyunFourth from '../assets/carayutyun_4.jpg'
 
@@ -27,9 +29,33 @@ const HOME_SERVICES = [
     icon: <img src={texnikayi} width="32" height="32" alt="" />,
   },
 ]
-
+const SERVICE_CARDS_WITH_PHOTOS = [
+  {
+    slug: 'Ճանապարհաշինություն',
+    title: 'Ճանապարհաշինություն',
+    img: canaparhFirst,
+  },
+  {
+    slug: 'ջրամատակարարում-և-ջրահեռացում',
+    title: 'Ջրամատակարարում և ջրահեռացում',
+    img: carayutyunSecond,
+  },
+  {
+    slug: 'տեխնիկայի-վարձակալություն',
+    title: 'Տեխնիկայի վարձակալություն',
+    img: carayutyunFourth,
+  },
+]
 export default function ServiceDetailPage() {
   const { slug } = useParams()
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const decodedSlug = decodeURIComponent(slug || '')
   const slugAliases = {
     'ջրամատակարարում-և-ջրահեռացում': 'betone-ashxatanq',
@@ -99,31 +125,39 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* ── Services ── */}
-      {/* <section className="services">
-        <div className="container">
-          <h2>Մեր ծառայությունները</h2>
-          <div className="services-grid">
-            {HOME_SERVICES.map(s => (
-              <div key={s.title} className={`service-card${s.active ? ' active' : ''}`}>
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
+      {isMobile && (() => {
+        let serviceSlugsToShow = []
+        if (decodedSlug === 'Ճանապարհաշինություն') {
+          serviceSlugsToShow = ['ջրամատակարարում-և-ջրահեռացում', 'տեխնիկայի-վարձակալություն']
+        } else if (decodedSlug === 'ջրամատակարարում-և-ջրահեռացում') {
+          serviceSlugsToShow = ['Ճանապարհաշինություն', 'տեխնիկայի-վարձակալություն']
+        } else if (decodedSlug === 'տեխնիկայի-վարձակալություն') {
+          serviceSlugsToShow = ['Ճանապարհաշինություն', 'ջրամատակարարում-և-ջրահեռացում']
+        }
+        const servicesToShow = SERVICE_CARDS_WITH_PHOTOS.filter(s => serviceSlugsToShow.includes(s.slug))
+        return servicesToShow.length > 0 ? (
+          <section className="services svc-page-section">
+            <div className="container">
+              <h2>Մեր ծառայությունները</h2>
+              <div className="img-grid-2x2">
+                {servicesToShow.map(s => (
+                  <Link key={s.slug} to={`/carayutyunner/${encodeURIComponent(s.slug)}`} className="img-card">
+                    <img src={s.img} alt={s.title} loading="lazy" />
+                    <div className="img-card-overlay" />
+                    <div className="img-card-content">
+                      <span className="img-card-title">{s.title}</span>
+                      <span className="img-card-link">դիտել մանրամասները</span>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="services-footer">
-            <Link to="/carayutyunner" className="btn-services-all">
-              Բոլոր ծառայությունները
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="15" height="15">
-                <path d="M5 12h14m-6-6 6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section> */}
+            </div>
+          </section>
+        ) : null
+      })()}
 
       {/* ── Products ── */}
-      <section className="products svc-detail-products">
+      <section className="products svc-detail-products products-mobile-hide">
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">

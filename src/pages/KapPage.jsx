@@ -114,7 +114,7 @@ export default function KapPage() {
       </section>
 
       {/* ── Services cards ── */}
-      <section className="services">
+      <section className="services products-mobile-hide">
         <div className="container">
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid">
@@ -138,7 +138,7 @@ export default function KapPage() {
       </section>
 
       {/* ── Projects ── */}
-      <section className="projects">
+      <section className="projects products-mobile-hide">
         <div className="container">
           <h2>Մեր նախագծերը</h2>
           <div className="img-grid-3col">

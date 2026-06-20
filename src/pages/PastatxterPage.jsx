@@ -130,7 +130,7 @@ export default function PastatxterPage() {
       </section>
 
       {/* ── Services cards ── */}
-      <section className="services">
+      <section className="services products-mobile-hide">
         <div className="container">
           <h2>Մեր ծառայությունները</h2>
           <div className="services-grid">
@@ -154,7 +154,7 @@ export default function PastatxterPage() {
       </section>
 
       {/* ── Products ── */}
-      <section className="products">
+      <section className="products products-mobile-hide">
         <div className="container">
           <h2>Մեր արտադրանքը</h2>
           <div className="img-grid-3x2">
