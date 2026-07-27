@@ -1076,6 +1076,13 @@ body {
   text-align: center;
 }
 
+.doc-gallery-part{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
 .doc-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

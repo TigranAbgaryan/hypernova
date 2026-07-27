@@ -48,6 +48,11 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/partatomser" className={({ isActive }) => isActive ? 'nav-active' : ''}>
+                Պարտատոմսեր
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/pastatxter" className={({ isActive }) => isActive ? 'nav-active' : ''}>
                 Փաստաթղթեր
               </NavLink>

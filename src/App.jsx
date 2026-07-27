@@ -12,6 +12,7 @@ import ServiceDetailPage from './pages/ServiceDetailPage'
 import AboutPage from './pages/AboutPage'
 import PastatxterPage from './pages/PastatxterPage'
 import KapPage from './pages/KapPage'
+import PartatomserPage from './pages/PartatomserPage'
 import './App.css'
 
 function ScrollToTop() {
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/carayutyunner/:slug" element={<ServiceDetailPage />} />
         <Route path="/mer-masin" element={<AboutPage />} />
         <Route path="/pastatxter" element={<PastatxterPage />} />
+        <Route path="/partatomser" element={<PartatomserPage />} />
         <Route path="/kap" element={<KapPage />} />
       </Routes>
       <Footer />
