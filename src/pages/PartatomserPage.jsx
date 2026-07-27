@@ -12,7 +12,7 @@ const DOCS = [
 export default function PartatomserPage() {
   return (
     <>
-      {/* Breadcrumb */}
+
       <div className="breadcrumb-bar">
         <div className="container breadcrumb-inner">
           <Link to="/" className="breadcrumb-link">Գլխավոր</Link>
