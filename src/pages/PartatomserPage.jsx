@@ -23,7 +23,7 @@ export default function PartatomserPage() {
         </div>
       </div>
 
-      {/* Documents */}
+
       <section className="svc-page-section">
         <div className="container">
           <h1 className="prod-page-title">Պարտատոմսեր</h1>
