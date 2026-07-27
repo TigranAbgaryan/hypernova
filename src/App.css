@@ -1921,7 +1921,7 @@ body {
    RESPONSIVE BREAKPOINTS
 ════════════════════════════════════════ */
 
-/* ── Large tablet (≤1024px) ── */
+/* ── Tablet (≤1024px) ── */
 @media (max-width: 1024px) {
   .container { padding: 0 20px; }
 
@@ -1943,10 +1943,7 @@ body {
 
   .services-grid--4 { grid-template-columns: repeat(2, 1fr); }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
-}
 
-/* ── Tablet (≤768px) ── */
-@media (max-width: 768px) {
   /* Navbar: show hamburger, hide desktop nav + phone */
   .hamburger { display: flex; }
   .btn-phone--desktop { display: none; }
@@ -1986,6 +1983,10 @@ body {
   .home-mobile-hide { display: none !important; }
   .products-mobile-hide { display: none !important; }
   .products-mobile-only { display: block; }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
 
   /* Sections padding */
   .services,
