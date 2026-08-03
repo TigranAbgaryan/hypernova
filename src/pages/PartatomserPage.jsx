@@ -2,11 +2,15 @@ import { Link } from 'react-router-dom'
 import pdf1 from '../assets/partatomser/1․300 Հիպերնովա.pdf'
 import pdf2 from '../assets/partatomser/Ազդագիր.pdf'
 import pdf3 from '../assets/partatomser/Հիպերնովա - Պարտատոմսերի գներ.pdf'
+import pdf4 from '../assets/partatomser/nerdrox_1.pdf'
+import pdf5 from '../assets/partatomser/nerdrox_2.pdf'  
 
 const DOCS = [
   { id: 1, pdf: pdf1, title: '1․300 Հիպերնովա' },
   { id: 2, pdf: pdf2, title: 'Ազդագիր' },
   { id: 3, pdf: pdf3, title: 'Հիպերնովա - Պարտատոմսերի գներ' },
+  { id: 4, pdf: pdf4, title: 'Հայտ ֆիզիկական անձ ներդրողների համար' },
+  { id: 5, pdf: pdf5, title: 'Հայտ իրավաբանական անձ ներդրողների համար' },
 ]
 
 export default function PartatomserPage() {
