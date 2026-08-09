@@ -11,6 +11,7 @@ const DOCS = [
   { id: 3, pdf: pdf3, title: 'Հիպերնովա - Պարտատոմսերի գներ' },
   { id: 4, pdf: pdf4, title: 'Հայտ ֆիզիկական անձ ներդրողների համար' },
   { id: 5, pdf: pdf5, title: 'Հայտ իրավաբանական անձ ներդրողների համար' },
+  { id: 6, pdf: pdf5, title: 'քաղաքականություն' },
 ]
 
 export default function PartatomserPage() {
