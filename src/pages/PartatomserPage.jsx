@@ -5,6 +5,11 @@ import pdf3 from '../assets/partatomser/Հիպերնովա - Պարտատոմս�
 import pdf4 from '../assets/partatomser/nerdrox_1.pdf'
 import pdf5 from '../assets/partatomser/nerdrox_2.pdf'
 import pdf6 from '../assets/partatomser/qaxaqakan.pdf'
+import pdf7 from '../assets/partatomser/xorhrdi-voroshum.pdf'
+import pdf8 from '../assets/partatomser/xorhrdi-voroshum-2.pdf'
+import pdf9 from '../assets/partatomser/xorhrdi-voroshum-3.pdf'
+import pdf10 from '../assets/partatomser/kanonadrutyan-poxarenq.pdf'
+
 
 const DOCS = [
   { id: 1, pdf: pdf1, title: '1․300 Հիպերնովա' },
@@ -13,6 +18,10 @@ const DOCS = [
   { id: 4, pdf: pdf4, title: 'Հայտ ֆիզիկական անձ ներդրողների համար' },
   { id: 5, pdf: pdf5, title: 'Հայտ իրավաբանական անձ ներդրողների համար' },
   { id: 6, pdf: pdf6, title: 'քաղաքականություն' },
+  { id: 7, pdf: pdf7, title: 'խորհրդի որոշում' },
+  { id: 8, pdf: pdf8, title: 'խորհրդի որոշում' },
+  { id: 9, pdf: pdf9, title: 'խորհրդի որոշում' },
+  { id: 10, pdf: pdf10, title: 'Կանոնադրության փոփոխություն' },
 ]
 
 export default function PartatomserPage() {
@@ -80,7 +89,7 @@ export default function PartatomserPage() {
                   <line x1="9" y1="17" x2="15" y2="17" strokeLinecap="round" />
                   <line x1="9" y1="9" x2="11" y2="9" strokeLinecap="round" />
                 </svg>
-                <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'center' }}>{doc.title}</span>
+                <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'center', textTransform: 'capitalize' }}>{doc.title}</span>
                 <span style={{ fontSize: '12px', color: '#EF6C00' }}>Բացել PDF</span>
               </a>
             ))}
