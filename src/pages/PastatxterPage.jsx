@@ -9,7 +9,7 @@ import pastatuxt2 from '../assets/pastatuxt_2.jpg'
 import pastatuxt3 from '../assets/pastatuxt_3.png'
 import pastatuxt4 from '../assets/pastatuxt_4.png'
 import othersPastatuxtFirst from '../assets/others_pastatuxt_1.jpg'
-import othersPastatuxtThird from '../assets/others_pastatuxt_3.png'
+import Kanonadrutyun from '../assets/Կանոնադրություն.pdf'
 import auditPdf from '../assets/audit 24-25 Hypernova.pdf'
 import n70Pdf from '../assets/N70h3280426000003 (2).pdf'
 
@@ -41,7 +41,7 @@ const LICENSES = [
 const OTHER_DOCS = [
   { id: 5, img: othersPastatuxtFirst },
   { id: 6, pdf: auditPdf },
-  { id: 7,  img: othersPastatuxtThird },
+  { id: 7,  pdf: Kanonadrutyun, title: 'Կանոնադրություն' },
   { id: 8,  pdf: n70Pdf },
 ]
 
