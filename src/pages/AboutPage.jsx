@@ -143,6 +143,16 @@ export default function AboutPage() {
               style={{ width: '100%', borderRadius: '8px', marginTop: '24px', display: 'block' }}
               loading="lazy"
             />
+
+            <iframe
+              src="https://www.youtube.com/embed/v8AekMpGoiY"
+              title="Հիպերնովա ՍՊԸ"
+              style={{ width: '100%', aspectRatio: '16 / 9', border: 'none', borderRadius: '8px', marginTop: '24px', display: 'block' }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
 
           {/* <div className="about-page-images">
